@@ -1,0 +1,72 @@
+{
+  "works": [
+    {
+      "id": "agri-ec",
+      "title": "農産物直販サイト",
+      "category": ["ec"],
+      "year": "2024",
+      "description": "地元農家の特産品を全国に届けるECサイト。季節商品のカレンダー予約システムを実装。",
+      "color": "from-indigo-800/80 to-amber-700/80",
+      "icon": "shopping-bag"
+    },
+    {
+      "id": "tourism-site",
+      "title": "観光施設公式サイト",
+      "category": ["corporate"],
+      "year": "2023",
+      "description": "自然体験施設の公式サイト。使いやすい予約システムとモバイルファーストデザイン。",
+      "color": "from-blue-800/80 to-teal-700/80",
+      "icon": "home"
+    },
+    {
+      "id": "brewery-ec",
+      "title": "醸造所オンラインショップ",
+      "category": ["ec"],
+      "year": "2023",
+      "description": "地元醸造所のECサイト制作。こだわりの原料と製法のストーリーを効果的に表現。",
+      "color": "from-amber-800/80 to-red-700/80",
+      "icon": "cube"
+    },
+    {
+      "id": "cafe-chain",
+      "title": "カフェチェーン公式サイト",
+      "category": ["corporate"],
+      "year": "2024",
+      "description": "カフェチェーンの公式サイト。店舗ごとの個性を活かしたデザインとモバイル予約システム導入。",
+      "color": "from-emerald-800/80 to-yellow-700/80",
+      "icon": "shopping-cart"
+    },
+    {
+      "id": "dairy-producer",
+      "title": "乳製品メーカーサイト",
+      "category": ["corporate", "ec"],
+      "year": "2023",
+      "description": "乳製品メーカーの企業サイトとオンラインショップ。視覚的なコンテンツで商品の魅力を表現。",
+      "color": "from-blue-800/80 to-purple-700/80",
+      "icon": "beaker"
+    },
+    {
+      "id": "crafts-ec",
+      "title": "工芸品販売サイト",
+      "category": ["ec"],
+      "year": "2024",
+      "description": "伝統工芸作家の作品を集めたECサイト。作家のストーリーと制作過程の魅力を伝えるデザイン。",
+      "color": "from-purple-800/80 to-pink-700/80",
+      "icon": "paint-brush"
+    }
+  ],
+  "filters": [
+    {
+      "id": "all",
+      "label": "すべて"
+    },
+    {
+      "id": "ec",
+      "label": "ECサイト"
+    },
+    {
+      "id": "corporate",
+      "label": "コーポレートサイト"
+    }
+  ]
+}
