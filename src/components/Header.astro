@@ -3,7 +3,11 @@
   class="flex items-center justify-between fixed top-0 left-0 z-50 w-full py-4 px-6 transition-all duration-300"
   id="main-header"
 >
-  <a href="/" class="flex items-center space-x-3 transition-all duration-300" id="logo-container">
+  <a
+    href="/"
+    class="flex items-center space-x-3 transition-all duration-300"
+    id="logo-container"
+  >
     <div class="relative w-6 h-6">
       <div
         class="absolute w-6 h-6 border border-blue-400 rounded-sm transform rotate-45 animate-pulse-slow"
@@ -18,6 +22,12 @@
   </a>
   <nav class="hidden md:flex items-center space-x-8">
     <a
+      href="/"
+      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
+    >
+      トップ
+    </a>
+    <a
       href="#services"
       class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
     >
@@ -28,12 +38,6 @@
       class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
     >
       実績
-    </a>
-    <a
-      href="#about"
-      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
-    >
-      十勝の強み
     </a>
     <a
       href="#contact"
@@ -98,7 +102,7 @@
     const mobileMenu = document.getElementById("mobile-menu");
     const header = document.getElementById("main-header");
     const logoContainer = document.getElementById("logo-container");
-    
+
     if (menuToggle && menuClose && mobileMenu) {
       menuToggle.addEventListener("click", () => {
         mobileMenu.classList.remove("hidden");
@@ -109,7 +113,7 @@
         mobileMenu.classList.remove("flex");
       });
     }
-    
+
     // スクロールイベントを追加
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
@@ -117,7 +121,7 @@
         header.classList.add("bg-gray-900/90");
         header.classList.add("backdrop-blur-sm");
         header.classList.add("shadow-md");
-        
+
         // ロゴを非表示
         logoContainer.classList.add("opacity-0");
         logoContainer.classList.add("transform");
@@ -128,20 +132,20 @@
         header.classList.remove("bg-gray-900/90");
         header.classList.remove("backdrop-blur-sm");
         header.classList.remove("shadow-md");
-        
+
         // ロゴを表示
         logoContainer.classList.remove("opacity-0");
         logoContainer.classList.remove("scale-0");
         logoContainer.classList.remove("-translate-x-10");
       }
     });
-    
+
     // ページ読み込み時に現在のスクロール位置をチェック
     if (window.scrollY > 50) {
       header.classList.add("bg-gray-900/90");
       header.classList.add("backdrop-blur-sm");
       header.classList.add("shadow-md");
-      
+
       // ロゴを非表示
       logoContainer.classList.add("opacity-0");
       logoContainer.classList.add("transform");
