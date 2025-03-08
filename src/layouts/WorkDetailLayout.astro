@@ -1,0 +1,144 @@
+---
+// src/layouts/WorkDetailLayout.astro
+import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Cta from "../components/Cta.astro";
+
+interface Props {
+  title: string;
+  category: string[];
+  year: string;
+  description: string;
+  imageColor: string;
+  icon: string;
+}
+
+const { title, category, year, description, imageColor, icon } = Astro.props;
+
+// アイコンのパスを取得する関数
+function getIconPath(iconName: string): string {
+  const icons: Record<string, string> = {
+    "shopping-bag": "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
+    home: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+    cube: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+    "shopping-cart":
+      "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+    beaker:
+      "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
+    "paint-brush":
+      "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01",
+  };
+
+  return icons[iconName] || icons["cube"]; // Default to cube if icon not found
+}
+
+// カテゴリーに基づいて表示名を取得
+function getCategoryName(categories: string[]): string {
+  if (categories.includes("ec") && categories.includes("corporate")) {
+    return "コーポレート・EC";
+  } else if (categories.includes("ec")) {
+    return "ECサイト";
+  } else {
+    return "コーポレートサイト";
+  }
+}
+---
+
+<BaseLayout title={title}>
+  <Header />
+
+  <!-- ヒーローセクション -->
+  <section
+    class="pt-32 pb-20 bg-gradient-to-b from-gray-900 to-indigo-900/80 overflow-hidden"
+  >
+    <div class="container px-6 mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <!-- 戻るリンク -->
+        <a
+          href="/#works"
+          class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 mb-8 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          制作実績一覧に戻る
+        </a>
+
+        <!-- タイトルとサブタイトル -->
+        <div class="flex items-start mb-10">
+          <div
+            class={`w-16 h-16 mr-6 flex-shrink-0 flex items-center justify-center rounded-sm ${imageColor} bg-opacity-80`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d={getIconPath(icon)}></path>
+            </svg>
+          </div>
+          <div>
+            <div
+              class="inline-block px-3 py-1 mb-2 text-xs tracking-wider text-indigo-300 uppercase bg-indigo-900/50 backdrop-blur-sm border border-indigo-800 rounded-sm"
+            >
+              {getCategoryName(category)}
+            </div>
+            <h1 class="text-3xl md:text-4xl font-light text-white">{title}</h1>
+            <div class="text-gray-400 text-sm mt-2">{year}年制作</div>
+          </div>
+        </div>
+
+        <!-- 説明文 -->
+        <p class="text-gray-300 font-light leading-relaxed text-lg mb-8">
+          {description}
+        </p>
+      </div>
+    </div>
+
+    <!-- 装飾的な波形 -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+      <svg
+        class="absolute bottom-0 left-0 w-full"
+        height="40"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 40"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#0F172A"
+          d="M0,15 L48,13 C96,11,192,7,288,9 C384,11,480,19,576,22 C672,25,768,23,864,19 C960,15,1056,9,1152,9 C1248,9,1344,15,1392,18 L1440,21 L1440,40 L1392,40 C1344,40,1248,40,1152,40 C1056,40,960,40,864,40 C768,40,672,40,576,40 C480,40,384,40,288,40 C192,40,96,40,48,40 L0,40 Z"
+        >
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- メインコンテンツ -->
+  <section class="py-20 bg-gray-950">
+    <div class="container px-6 mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <slot />
+      </div>
+    </div>
+  </section>
+
+  <Cta />
+  <Footer />
+</BaseLayout>

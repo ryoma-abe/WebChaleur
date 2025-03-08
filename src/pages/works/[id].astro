@@ -1,0 +1,305 @@
+---
+import WorkDetailLayout from "../../layouts/WorkDetailLayout.astro";
+import portfolioData from '../../data/portfolio-data.json';
+// import { getImage } from "astro:assets";
+
+export async function getStaticPaths() {
+  const { works } = portfolioData;
+  
+  return works.map((work) => {
+    return {
+      params: { id: work.id },
+      props: { work }
+    };
+  });
+}
+
+const { work } = Astro.props;
+
+// カテゴリに基づいて使用技術を取得
+function getTechnologies(categories) {
+  const techMap = {
+    'ec': ['Shopify', 'WooCommerce', 'カスタムECシステム'],
+    'corporate': ['WordPress', 'Astro', 'Next.js']
+  };
+  
+  let technologies = [];
+  categories.forEach(category => {
+    if (techMap[category]) {
+      technologies = [...technologies, ...techMap[category]];
+    }
+  });
+  
+  return technologies.slice(0, 2); // 最大2つまで表示
+}
+
+// 使用した主な技術
+const technologies = getTechnologies(work.category);
+
+// 関連する他の作品を取得 (同じカテゴリから最大2つ)
+const relatedWorks = portfolioData.works
+  .filter(item => 
+    item.id !== work.id && 
+    item.category.some(cat => work.category.includes(cat))
+  )
+  .slice(0, 2);
+---
+
+<WorkDetailLayout
+  title={work.title}
+  category={work.category}
+  year={work.year}
+  description={work.description}
+  imageColor={work.color}
+  icon={work.icon}
+>
+  <!-- プロジェクト詳細情報 -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">プロジェクト概要</h2>
+    
+    <!-- 詳細内容 -->
+    <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-sm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <!-- プロジェクト特徴 -->
+        <div>
+          <h3 class="text-xl font-medium text-white mb-4">プロジェクトの特徴</h3>
+          <p class="text-gray-300 font-light mb-6">
+            {work.fullDescription || `${work.description} このプロジェクトでは、クライアントの要望に合わせた最適なソリューションを提供しました。ユーザビリティを重視したデザインと機能性の両立を目指し、モダンな技術スタックを活用しています。`}
+          </p>
+          
+          <h4 class="text-white font-medium mb-3">使用技術</h4>
+          <div class="flex flex-wrap gap-2 mb-6">
+            {technologies.map(tech => (
+              <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 text-xs rounded-sm border border-indigo-800">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <!-- 成果・実績 -->
+        <div>
+          <h3 class="text-xl font-medium text-white mb-4">成果・実績</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0 transform translate-y-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">
+                {work.results?.[0] || "サイト訪問者数が前年比150%に増加"}
+              </span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0 transform translate-y-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">
+                {work.results?.[1] || "ページ滞在時間が30%向上"}
+              </span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0 transform translate-y-0.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">
+                {work.results?.[2] || "コンバージョン率が2倍に改善"}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-6 border-t border-white/10">
+        <h3 class="text-xl font-medium text-white mb-4">制作ポイント</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h4 class="text-white font-medium mb-2">デザイン</h4>
+            <p class="text-gray-400 text-sm">
+              {work.designPoints || "ブランドイメージに合わせたカラーパレットと直感的なUIで、ユーザーの操作性を最優先にデザインしました。"}
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-medium mb-2">機能性</h4>
+            <p class="text-gray-400 text-sm">
+              {work.functionalPoints || "高速なページ読み込みと、モバイルでの使いやすさを重視した実装で、あらゆるデバイスでの最適な体験を提供しています。"}
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-medium mb-2">SEO</h4>
+            <p class="text-gray-400 text-sm">
+              {work.seoPoints || "検索エンジン最適化の観点から、適切なマークアップと構造化データの実装により、検索結果での可視性向上に貢献しています。"}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- プロジェクト画像 -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">プロジェクト画像</h2>
+    
+    <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-sm mb-6">
+      <div class={`w-full h-full ${work.color} flex items-center justify-center`}>
+        <!-- プロジェクト画像またはプレースホルダー -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-24 h-24 text-white/30"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d={`M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z`}
+          ></path>
+        </svg>
+      </div>
+    </div>
+    
+    <p class="text-gray-400 text-center text-sm">
+      ※ 実際のプロジェクト画像はクライアント様の許可を得て掲載しています
+    </p>
+  </div>
+  
+  <!-- クライアントの声 -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">クライアントの声</h2>
+    
+    <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-sm">
+      <div class="flex items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-400 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+        <div>
+          <p class="text-gray-300 italic mb-4">
+            {work.testimonial || "「スピーディーな対応と、ニーズを的確に捉えたデザイン提案に感謝しています。リニューアル後は問い合わせ数が増え、ビジネスの成長に大きく貢献しています。」"}
+          </p>
+          <p class="text-indigo-400">
+            {work.clientName || "- 担当者様"}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 関連作品 -->
+  {relatedWorks.length > 0 && (
+    <div>
+      <h2 class="text-2xl font-light text-white mb-8">関連作品</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {relatedWorks.map(relatedWork => (
+          <a href={`/works/${relatedWork.id}`} class="group">
+            <div class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10">
+              <!-- サムネイル -->
+              <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+                <div class={`w-full h-full ${relatedWork.color} group-hover:scale-105 transition-transform duration-500`}>
+                </div>
+                <!-- プレースホルダー画像 -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-12 h-12 text-white/30"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d={`M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z`}
+                    ></path>
+                  </svg>
+                </div>
+                <!-- オーバーレイ -->
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50">
+                </div>
+              </div>
+
+              <!-- コンテンツ -->
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <span class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm">
+                    {relatedWork.category.includes('ec') && relatedWork.category.includes('corporate') 
+                      ? 'コーポレート・EC'
+                      : relatedWork.category.includes('ec') 
+                        ? 'ECサイト' 
+                        : 'コーポレートサイト'}
+                  </span>
+                  <span class="text-gray-400 text-xs">{relatedWork.year}年</span>
+                </div>
+                <h3 class="text-xl font-medium text-white mb-2">
+                  {relatedWork.title}
+                </h3>
+                <p class="text-gray-400 font-light text-sm">
+                  {relatedWork.description}
+                </p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+</WorkDetailLayout>
+
+<style>
+  /* アスペクト比 */
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 16;
+  }
+
+  .aspect-h-9 {
+    --tw-aspect-h: 9;
+  }
+
+  .aspect-h-12 {
+    --tw-aspect-h: 12;
+  }
+
+  .aspect-w-16 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+</style>
