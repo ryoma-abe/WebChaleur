@@ -1,0 +1,556 @@
+---
+import ServiceDetailLayout from "../../layouts/ServiceDetailLayout.astro";
+---
+
+<ServiceDetailLayout
+  title="Webマーケティング"
+  serviceType="マーケティング支援"
+  description="データ分析に基づいたSEO対策と集客戦略。効果的なキーワード選定から広告運用まで、ROIを最大化するマーケティング施策を実施します。"
+  icon="chart-bar"
+>
+  <!-- サービスの特長セクション -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">サービスの特長</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 特長1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          データドリブンなSEO戦略
+        </h3>
+        <p class="text-gray-300 font-light">
+          検索エンジン最適化の基本となるキーワード分析、競合調査、サイト内部・外部対策を徹底的に行います。サーチコンソールやアナリティクスのデータを活用し、具体的な改善施策を提案・実施します。
+        </p>
+      </div>
+
+      <!-- 特長2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          コンバージョン最適化
+        </h3>
+        <p class="text-gray-300 font-light">
+          訪問者の行動分析に基づき、LP（ランディングページ）やWebサイト全体のUI/UXを改善。A/Bテストを活用し、コンバージョン率を向上させる施策を実施します。
+        </p>
+      </div>
+
+      <!-- 特長3 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">効果的な広告運用</h3>
+        <p class="text-gray-300 font-light">
+          Google・Yahoo!・SNS広告など、目的とターゲットに最適な広告プラットフォームを選定。高いROIを実現する運用体制を構築し、継続的な改善と最適化を実施します。
+        </p>
+      </div>
+
+      <!-- 特長4 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          コンテンツマーケティング
+        </h3>
+        <p class="text-gray-300 font-light">
+          ターゲットユーザーの課題を解決する高品質なコンテンツ制作。SEOを考慮した記事設計から、SNS運用まで一貫したコンテンツ戦略で、オーガニック流入とブランド認知の向上を実現します。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 対応サービス -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">対応サービス</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- SEO対策 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">SEO対策</h3>
+        <p class="text-gray-400 mb-4">検索エンジンからの流入を最大化</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">キーワード戦略立案</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">技術的SEO対策</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">コンテンツSEO</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 広告運用 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">広告運用</h3>
+        <p class="text-gray-400 mb-4">効率的な広告配信で成果を最大化</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">Google/Yahoo!広告</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">SNS広告（Meta/X/Instagram等）</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">リターゲティング広告</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- アクセス解析・改善 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">アクセス解析・改善</h3>
+        <p class="text-gray-400 mb-4">データに基づく継続的な改善</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">Google Analytics設定・分析</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">ヒートマップ分析</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">コンバージョン最適化</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 支援プロセス -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">支援プロセス</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- ステップ1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">1</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              現状分析・目標設定
+            </h3>
+            <p class="text-gray-300 font-light">
+              現在のWebサイト状況、競合分析、KPI設定と達成目標の明確化
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">2</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              戦略立案・施策設計
+            </h3>
+            <p class="text-gray-300 font-light">
+              a 目標達成に向けた具体的な施策とロードマップの策定
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ3 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">3</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">施策実行</h3>
+            <p class="text-gray-300 font-light">
+              SEO施策、広告運用、コンテンツ制作など各種施策の実施
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ4 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">4</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">効果測定・改善</h3>
+            <p class="text-gray-300 font-light">
+              データ分析に基づく効果検証と継続的な改善施策の実施
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 料金プラン -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">料金プラン</h2>
+
+    <div class="max-w-3xl mx-auto">
+      <!-- 包括的マーケティングプラン -->
+      <div
+        class="relative p-8 backdrop-blur-sm bg-indigo-900/30 border border-indigo-500/30 rounded-sm"
+      >
+        <div
+          class="absolute top-0 right-0 px-3 py-1 text-xs tracking-wider text-white bg-indigo-600 -mt-3 -mr-3"
+        >
+          カスタマイズ可能
+        </div>
+        <h4 class="text-2xl font-medium text-white mb-3">
+          包括的マーケティングプラン
+        </h4>
+        <div class="flex items-center mb-6">
+          <span class="text-3xl font-light text-white">10</span>
+          <span class="text-xl text-indigo-400 font-light">万円〜</span>
+          <span class="text-gray-400 text-sm ml-2">/月</span>
+          <span class="text-gray-300 text-sm ml-3">※最低契約期間：6ヶ月</span>
+        </div>
+        <p class="text-gray-300 font-light mb-6">
+          お客様のビジネス目標に合わせた包括的なWebマーケティング支援プラン。初期分析と戦略立案から、継続的な施策実行と改善まで一貫してサポートします。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h5 class="text-white text-lg mb-3">含まれるサービス</h5>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300 text-sm"
+                  >SEO対策・コンテンツ戦略</span
+                >
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300 text-sm">広告運用（予算別）</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300 text-sm"
+                  >アクセス解析・レポーティング</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="text-white text-lg mb-3">オプションサービス</h5>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300 text-sm"
+                  >SNS運用代行（+5万円〜/月）</span
+                >
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300 text-sm"
+                  >コンテンツ制作（+3万円〜/記事）</span
+                >
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-300 text-sm"
+                  >メール配信サポート（+3万円〜/月）</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <a
+            href="/contact"
+            class="inline-flex items-center px-8 py-3 text-sm tracking-wider text-white bg-indigo-600 rounded-sm hover:bg-indigo-700 transition-colors"
+          >
+            無料カウンセリングを予約する
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-8 text-gray-400 text-sm">
+      <p>※広告出稿費は別途必要です</p>
+      <p>
+        ※具体的な施策内容と料金は、ビジネス規模や目標に合わせてカスタマイズいたします
+      </p>
+    </div>
+  </div>
+
+  <!-- 実績紹介 -->
+  <div>
+    <h2 class="text-2xl font-light text-white mb-8">支援実績</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 実績1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <span
+          class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm mb-3"
+        >
+          SEO対策
+        </span>
+        <h3 class="text-xl font-medium text-white mb-2">観光事業者サイト</h3>
+        <p class="text-gray-300 font-light mb-4">
+          十勝エリアの観光施設のSEO対策を実施。地域特化キーワード戦略と質の高いコンテンツ制作により、6か月間でオーガニック流入を200%向上させました。
+        </p>
+      </div>
+
+      <!-- 実績2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <span
+          class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm mb-3"
+        >
+          広告運用
+        </span>
+        <h3 class="text-xl font-medium text-white mb-2">地元食品メーカー</h3>
+        <p class="text-gray-300 font-light mb-4">
+          Google/Meta広告の最適化と効率的な予算配分により、広告費用対効果を150%改善。ターゲティングの精度向上と広告クリエイティブの改善で、コンバージョン率が2.5倍に向上しました。
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a
+        href="/#works"
+        class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors"
+      >
+        <span>すべての支援実績を見る</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 ml-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</ServiceDetailLayout>

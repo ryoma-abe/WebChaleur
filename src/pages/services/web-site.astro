@@ -1,0 +1,531 @@
+---
+import ServiceDetailLayout from "../../layouts/ServiceDetailLayout.astro";
+---
+
+<ServiceDetailLayout
+  title="Webサイト制作"
+  serviceType="ホームページ制作"
+  description="企業の強みを的確に伝えるデザインと構成。信頼感を醸成するコーポレートサイトから、高速表示にこだわったサービスサイトまで幅広く対応します。"
+  icon="store"
+>
+  <!-- サービスの特長セクション -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">サービスの特長</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 特長1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          ブランド価値を高めるデザイン
+        </h3>
+        <p class="text-gray-300 font-light">
+          企業の理念やビジョンを視覚的に表現し、訪問者に強い印象を残すデザインを提供します。コンセプトに沿ったカラーパレットや写真、イラストを使用し、一貫性のあるブランドイメージを構築します。
+        </p>
+      </div>
+
+      <!-- 特長2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          高速表示・パフォーマンス最適化
+        </h3>
+        <p class="text-gray-300 font-light">
+          最新の技術を活用し、表示速度とユーザー体験を最大化。画像の最適化、コードの軽量化、キャッシュ戦略などを駆使して、Googleの評価基準「Core
+          Web Vitals」で高スコアを実現します。
+        </p>
+      </div>
+
+      <!-- 特長3 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          SEOを考慮した構造設計
+        </h3>
+        <p class="text-gray-300 font-light">
+          検索エンジンに評価される適切なHTML構造とコンテンツ設計。ユーザーの検索意図を理解し、自然な形で検索キーワードを取り入れたコンテンツ戦略で、オーガニック流入の増加を支援します。
+        </p>
+      </div>
+
+      <!-- 特長4 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">簡単更新システム</h3>
+        <p class="text-gray-300 font-light">
+          専門知識がなくても簡単に更新できるCMSの導入。WordPressやAstroなどのシステムをビジネスニーズに合わせてカスタマイズし、更新の手間を最小限に抑えた運用しやすいサイトを構築します。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 対応プラットフォーム -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">対応テクノロジー</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- WordPress -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">WordPress</h3>
+        <p class="text-gray-400 mb-4">世界シェアNo.1のCMSプラットフォーム</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">豊富なプラグインと拡張性</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">SEOに強い構造</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Astro -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">Astro</h3>
+        <p class="text-gray-400 mb-4">高速表示に特化した最新フレームワーク</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">圧倒的な表示速度</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">SEO最適化されたHTML出力</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next.js -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">Next.js</h3>
+        <p class="text-gray-400 mb-4">高機能なReactフレームワーク</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">インタラクティブなUIを実現</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">豊富なエコシステム</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 制作プロセス -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">制作プロセス</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- ステップ1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">1</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              ヒアリング・要件定義
+            </h3>
+            <p class="text-gray-300 font-light">
+              事業目標、ターゲットユーザー、競合分析、KPIの設定
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">2</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              情報設計・ワイヤーフレーム
+            </h3>
+            <p class="text-gray-300 font-light">
+              サイトマップ作成、ユーザー体験を考慮した画面設計
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ3 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">3</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">デザイン・開発</h3>
+            <p class="text-gray-300 font-light">
+              モックアップ作成、UI設計、コーディング、CMS実装
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ4 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">4</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              テスト・公開・運用支援
+            </h3>
+            <p class="text-gray-300 font-light">
+              品質検証、サイト公開、アクセス解析、継続的な改善提案
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 料金プラン -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">料金プラン</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- スタンダードプラン -->
+      <div
+        class="relative p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm"
+      >
+        <h4 class="text-xl font-medium text-white mb-2">スタンダードプラン</h4>
+        <div class="flex items-end mb-4">
+          <span class="text-3xl font-light text-white">20</span>
+          <span class="text-xl text-indigo-400 font-light">万円〜</span>
+        </div>
+        <p class="text-gray-400 font-light text-sm mb-4">
+          小規模ビジネス向けの基本的なコーポレートサイト
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">5ページ程度の基本構成</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">レスポンシブデザイン</span>
+          </li>
+        </ul>
+        <div class="pt-2 border-t border-white/10">
+          <span class="block text-gray-400 text-sm mb-1">月額運用費</span>
+          <span class="text-xl text-white"
+            >1<span class="text-indigo-400 font-light text-lg">万円〜</span
+            ></span
+          >
+        </div>
+      </div>
+
+      <!-- ビジネスプラン -->
+      <div
+        class="relative p-6 backdrop-blur-sm bg-indigo-900/30 border border-indigo-500/30 rounded-sm"
+      >
+        <div
+          class="absolute top-0 right-0 px-3 py-1 text-xs tracking-wider text-white bg-indigo-600 -mt-3 -mr-3"
+        >
+          人気
+        </div>
+        <h4 class="text-xl font-medium text-white mb-2">ビジネスプラン</h4>
+        <div class="flex items-end mb-4">
+          <span class="text-3xl font-light text-white">35</span>
+          <span class="text-xl text-indigo-400 font-light">万円〜</span>
+        </div>
+        <p class="text-gray-400 font-light text-sm mb-4">
+          成長中の企業向け本格コーポレートサイト
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">10〜15ページの構成</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">SEO対策とブログ機能</span>
+          </li>
+        </ul>
+        <div class="pt-2 border-t border-white/10">
+          <span class="block text-gray-400 text-sm mb-1">月額運用費</span>
+          <span class="text-xl text-white"
+            >2<span class="text-indigo-400 font-light text-lg">万円〜</span
+            ></span
+          >
+        </div>
+      </div>
+
+      <!-- プレミアムプラン -->
+      <div
+        class="relative p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm"
+      >
+        <h4 class="text-xl font-medium text-white mb-2">プレミアムプラン</h4>
+        <div class="flex items-end mb-4">
+          <span class="text-3xl font-light text-white">60</span>
+          <span class="text-xl text-indigo-400 font-light">万円〜</span>
+        </div>
+        <p class="text-gray-400 font-light text-sm mb-4">
+          大規模ビジネス向け高機能サイト
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">20ページ以上の大規模サイト</span
+            >
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">カスタム機能・外部連携</span>
+          </li>
+        </ul>
+        <div class="pt-2 border-t border-white/10">
+          <span class="block text-gray-400 text-sm mb-1">月額運用費</span>
+          <span class="text-xl text-white">要相談</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 text-sm tracking-wider text-white bg-indigo-600 rounded-sm hover:bg-indigo-700 transition-colors"
+      >
+        詳細な見積もりを依頼する
+      </a>
+    </div>
+  </div>
+
+  <!-- 実績紹介 -->
+  <div>
+    <h2 class="text-2xl font-light text-white mb-8">制作実績</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 実績1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <span
+          class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm mb-3"
+        >
+          Astro
+        </span>
+        <h3 class="text-xl font-medium text-white mb-2">観光施設公式サイト</h3>
+        <p class="text-gray-300 font-light mb-4">
+          十勝の自然を活かした体験施設の公式サイト。季節ごとの魅力を伝える写真ギャラリーと予約システムを実装し、訪問者数が120%増加。
+        </p>
+      </div>
+
+      <!-- 実績2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <span
+          class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm mb-3"
+        >
+          WordPress
+        </span>
+        <h3 class="text-xl font-medium text-white mb-2">
+          カフェチェーン公式サイト
+        </h3>
+        <p class="text-gray-300 font-light mb-4">
+          地元カフェチェーンの店舗情報とメニュー紹介サイト。店舗ごとの情報を簡単に更新できるCMS設計と、オンライン予約システムの導入で顧客満足度が向上。
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a
+        href="/#works"
+        class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors"
+      >
+        <span>すべての制作実績を見る</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 ml-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</ServiceDetailLayout>
