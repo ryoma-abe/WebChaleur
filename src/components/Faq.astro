@@ -1,0 +1,321 @@
+---
+// FAQ.astro
+---
+
+<section id="faq" class="py-20 bg-gray-900">
+  <div class="container px-6 mx-auto">
+    <!-- セクションヘッダー -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div
+        class="inline-block px-3 py-1 mb-4 text-xs tracking-wider text-indigo-300 uppercase bg-indigo-900/50 backdrop-blur-sm border border-indigo-800 rounded-sm"
+      >
+        よくある質問
+      </div>
+      <h2 class="text-3xl md:text-4xl font-light text-white mb-4">
+        ご不明な点は<span class="text-indigo-400">こちら</span>で
+      </h2>
+      <p class="text-gray-400 font-light leading-relaxed">
+        サービスについてよくいただく質問をまとめました。ご不明な点がございましたら、お気軽にお問い合わせください。
+      </p>
+    </div>
+
+    <!-- FAQ アコーディオン -->
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-6">
+        <!-- FAQ アイテム 1 -->
+        <div class="faq-item group">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm text-left transition-all duration-300 hover:bg-white/10"
+            aria-expanded="false"
+          >
+            <h3 class="text-xl font-light text-white pr-8">
+              制作期間はどのくらいかかりますか？
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 transform transition-transform duration-300 group-[.active]:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="faq-answer overflow-hidden max-h-0 transition-all duration-300 bg-white/[0.03] rounded-b-sm"
+          >
+            <div class="p-6 text-gray-300">
+              <p>
+                プロジェクトの規模や要件によって異なりますが、一般的なWebサイトの場合は4〜8週間程度、ECサイトの場合は8〜12週間程度を目安にしています。具体的な納期については、ヒアリングの上でご提案させていただきます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ アイテム 2 -->
+        <div class="faq-item group">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm text-left transition-all duration-300 hover:bg-white/10"
+            aria-expanded="false"
+          >
+            <h3 class="text-xl font-light text-white pr-8">
+              料金体系はどのようになっていますか？
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 transform transition-transform duration-300 group-[.active]:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="faq-answer overflow-hidden max-h-0 transition-all duration-300 bg-white/[0.03] rounded-b-sm"
+          >
+            <div class="p-6 text-gray-300">
+              <p>
+                料金はプロジェクトの規模や要件によって異なります。Webサイト制作は30万円〜、ECサイト制作は50万円〜、Webマーケティングは月額10万円〜、SNS運用サポートは月額5万円〜が目安です。まずはご相談いただき、お見積りをご提案させていただきます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ アイテム 3 -->
+        <div class="faq-item group">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm text-left transition-all duration-300 hover:bg-white/10"
+            aria-expanded="false"
+          >
+            <h3 class="text-xl font-light text-white pr-8">
+              制作後のサポートはありますか？
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 transform transition-transform duration-300 group-[.active]:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="faq-answer overflow-hidden max-h-0 transition-all duration-300 bg-white/[0.03] rounded-b-sm"
+          >
+            <div class="p-6 text-gray-300">
+              <p>
+                はい、制作後のサポートプランをご用意しています。月々のメンテナンスプランやスポット対応など、お客様のニーズに合わせたサポート体制をご提案します。サイト更新や技術的なサポート、セキュリティ対策なども含まれています。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ アイテム 4 -->
+        <div class="faq-item group">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm text-left transition-all duration-300 hover:bg-white/10"
+            aria-expanded="false"
+          >
+            <h3 class="text-xl font-light text-white pr-8">
+              契約から納品までの流れを教えてください
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 transform transition-transform duration-300 group-[.active]:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="faq-answer overflow-hidden max-h-0 transition-all duration-300 bg-white/[0.03] rounded-b-sm"
+          >
+            <div class="p-6 text-gray-300">
+              <ol class="list-decimal pl-5 space-y-2">
+                <li>
+                  <span class="text-indigo-300">ヒアリング・提案</span>
+                  ：お客様のご要望をお聞きし、最適なプランをご提案します
+                </li>
+                <li>
+                  <span class="text-indigo-300">お見積り・契約</span>
+                  ：具体的な内容と費用をご確認いただき、契約を締結します
+                </li>
+                <li>
+                  <span class="text-indigo-300">設計・デザイン</span>
+                  ：サイト構成やワイヤーフレーム、デザインを作成します
+                </li>
+                <li>
+                  <span class="text-indigo-300">開発・実装</span>
+                  ：デザインを基にコーディングや機能実装を行います
+                </li>
+                <li>
+                  <span class="text-indigo-300">テスト・調整</span>
+                  ：動作確認や細部の調整を行います
+                </li>
+                <li>
+                  <span class="text-indigo-300">納品・公開</span>
+                  ：最終確認後、サイトを公開します
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ アイテム 5 -->
+        <div class="faq-item group">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm text-left transition-all duration-300 hover:bg-white/10"
+            aria-expanded="false"
+          >
+            <h3 class="text-xl font-light text-white pr-8">
+              対応エリアはどこまででしょうか？
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 transform transition-transform duration-300 group-[.active]:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="faq-answer overflow-hidden max-h-0 transition-all duration-300 bg-white/[0.03] rounded-b-sm"
+          >
+            <div class="p-6 text-gray-300">
+              <p>
+                オンラインでの打ち合わせが可能なため、全国どこでもご対応可能です。ただし、対面でのミーティングをご希望の場合は、関東エリアを中心に対応しております。遠方の場合でもオンラインでのサポートは万全の体制で行っております。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ アイテム 6 -->
+        <div class="faq-item group">
+          <button
+            class="faq-question w-full flex items-center justify-between p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm text-left transition-all duration-300 hover:bg-white/10"
+            aria-expanded="false"
+          >
+            <h3 class="text-xl font-light text-white pr-8">
+              SEO対策は含まれていますか？
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 transform transition-transform duration-300 group-[.active]:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="faq-answer overflow-hidden max-h-0 transition-all duration-300 bg-white/[0.03] rounded-b-sm"
+          >
+            <div class="p-6 text-gray-300">
+              <p>
+                基本的なSEO対策（メタタグの設定、適切なHTML構造、モバイル対応など）は全ての制作プランに含まれています。より本格的なSEO対策（キーワード調査、コンテンツ最適化、外部リンク戦略など）については、Webマーケティングプランでご提供しております。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- お問い合わせへの誘導 -->
+      <div class="text-center mt-12">
+        <p class="text-gray-400 mb-6">
+          他にもご質問がございましたら、お気軽にお問い合わせください。
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wider text-white uppercase transition-all bg-indigo-600 border border-transparent rounded-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          お問い合わせをする
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4 ml-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // アコーディオンの動作を制御するスクリプト
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      question.addEventListener("click", () => {
+        // 現在のアイテムの状態を切り替える
+        const isExpanded = question.getAttribute("aria-expanded") === "true";
+        
+        // 全てのFAQを閉じる
+        faqItems.forEach((otherItem) => {
+          const otherQuestion = otherItem.querySelector(".faq-question");
+          const otherAnswer = otherItem.querySelector(".faq-answer");
+          
+          otherQuestion.setAttribute("aria-expanded", "false");
+          otherAnswer.style.maxHeight = "0";
+          otherItem.classList.remove("active");
+        });
+
+        // クリックしたアイテムが閉じていた場合は開く
+        if (!isExpanded) {
+          question.setAttribute("aria-expanded", "true");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          item.classList.add("active");
+        }
+      });
+    });
+  });
+</script>

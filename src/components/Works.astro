@@ -1,0 +1,482 @@
+---
+// works.astro
+// 十勝WebStudioの実績紹介セクション
+---
+
+<section id="works" class="relative py-24 bg-gray-950 overflow-hidden">
+  <!-- 背景装飾 -->
+  <div class="absolute inset-0 z-0">
+    <!-- グリッドオーバーレイ -->
+    <div class="absolute inset-0 grid-overlay opacity-10"></div>
+
+    <!-- 角度のついた区切り線 -->
+    <div
+      class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-gray-900/50 to-transparent"
+    >
+    </div>
+  </div>
+
+  <div class="container relative z-10 px-6 mx-auto">
+    <!-- セクションヘッダー -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div
+        class="inline-block px-3 py-1 mb-4 text-xs tracking-wider text-indigo-300 uppercase bg-indigo-900/50 backdrop-blur-sm border border-indigo-800 rounded-sm"
+      >
+        制作実績
+      </div>
+      <h2 class="text-3xl md:text-4xl font-light text-white mb-4">
+        十勝・帯広の企業様との<br /><span class="text-indigo-400">実績</span>
+      </h2>
+      <p class="text-gray-400 font-light leading-relaxed">
+        地域に根ざした企業様と共に制作した実績の一部をご紹介します。
+      </p>
+    </div>
+
+    <!-- 実績フィルター -->
+    <div class="flex flex-wrap justify-center mb-12 gap-2">
+      <button
+        class="filter-btn active px-4 py-2 text-sm tracking-wider text-white bg-indigo-700/50 border border-indigo-600/50 rounded-sm hover:bg-indigo-700/70 transition-colors"
+        data-filter="all"
+      >
+        すべて
+      </button>
+      <button
+        class="filter-btn px-4 py-2 text-sm tracking-wider text-gray-300 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 transition-colors"
+        data-filter="ec"
+      >
+        ECサイト
+      </button>
+      <button
+        class="filter-btn px-4 py-2 text-sm tracking-wider text-gray-300 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 transition-colors"
+        data-filter="corporate"
+      >
+        コーポレートサイト
+      </button>
+    </div>
+
+    <!-- 実績ギャラリー -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <!-- 実績1: 農産物ECサイト -->
+      <div class="work-item group" data-category="ec">
+        <div
+          class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+        >
+          <!-- サムネイル -->
+          <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+            <div
+              class="w-full h-full bg-gradient-to-br from-indigo-800/80 to-amber-700/80 group-hover:scale-105 transition-transform duration-500"
+            >
+            </div>
+            <!-- プレースホルダー画像 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-white/30"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <!-- オーバーレイ -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+            >
+            </div>
+          </div>
+
+          <!-- コンテンツ -->
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <span
+                class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                >ECサイト</span
+              >
+              <span class="text-gray-400 text-xs">2024年</span>
+            </div>
+            <h3 class="text-xl font-medium text-white mb-2">
+              農産物直販サイト
+            </h3>
+            <p class="text-gray-400 font-light text-sm mb-4">
+              地元農家の特産品を全国に届けるECサイト。季節商品のカレンダー予約システムを実装。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 実績2: 観光施設 -->
+      <div class="work-item group" data-category="corporate">
+        <div
+          class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+        >
+          <!-- サムネイル -->
+          <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+            <div
+              class="w-full h-full bg-gradient-to-br from-blue-800/80 to-teal-700/80 group-hover:scale-105 transition-transform duration-500"
+            >
+            </div>
+            <!-- プレースホルダー画像 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-white/30"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+            </div>
+            <!-- オーバーレイ -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+            >
+            </div>
+          </div>
+
+          <!-- コンテンツ -->
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <span
+                class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                >コーポレートサイト</span
+              >
+              <span class="text-gray-400 text-xs">2023年</span>
+            </div>
+            <h3 class="text-xl font-medium text-white mb-2">
+              観光施設公式サイト
+            </h3>
+            <p class="text-gray-400 font-light text-sm mb-4">
+              十勝の自然体験施設の公式サイト。使いやすい予約システムとモバイルファーストデザイン。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 実績3: クラフトビール -->
+      <div class="work-item group" data-category="ec">
+        <div
+          class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+        >
+          <!-- サムネイル -->
+          <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+            <div
+              class="w-full h-full bg-gradient-to-br from-amber-800/80 to-red-700/80 group-hover:scale-105 transition-transform duration-500"
+            >
+            </div>
+            <!-- プレースホルダー画像 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-white/30"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                ></path>
+              </svg>
+            </div>
+            <!-- オーバーレイ -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+            >
+            </div>
+          </div>
+
+          <!-- コンテンツ -->
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <span
+                class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                >ECサイト</span
+              >
+              <span class="text-gray-400 text-xs">2023年</span>
+            </div>
+            <h3 class="text-xl font-medium text-white mb-2">
+              地域醸造所オンラインショップ
+            </h3>
+            <p class="text-gray-400 font-light text-sm mb-4">
+              地元醸造所のECサイト制作。十勝産原料のストーリーと商品情報を効果的に表現。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 実績4: カフェチェーン -->
+      <div class="work-item group" data-category="corporate">
+        <div
+          class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+        >
+          <!-- サムネイル -->
+          <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+            <div
+              class="w-full h-full bg-gradient-to-br from-emerald-800/80 to-yellow-700/80 group-hover:scale-105 transition-transform duration-500"
+            >
+            </div>
+            <!-- プレースホルダー画像 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-white/30"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <!-- オーバーレイ -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+            >
+            </div>
+          </div>
+
+          <!-- コンテンツ -->
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <span
+                class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                >コーポレートサイト</span
+              >
+              <span class="text-gray-400 text-xs">2024年</span>
+            </div>
+            <h3 class="text-xl font-medium text-white mb-2">
+              カフェ公式サイト
+            </h3>
+            <p class="text-gray-400 font-light text-sm mb-4">
+              地域カフェの公式サイト。店舗ごとの個性を活かしたデザインとモバイル予約システム導入。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 実績5: 乳製品メーカー -->
+      <div class="work-item group" data-category="corporate ec">
+        <div
+          class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+        >
+          <!-- サムネイル -->
+          <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+            <div
+              class="w-full h-full bg-gradient-to-br from-blue-800/80 to-purple-700/80 group-hover:scale-105 transition-transform duration-500"
+            >
+            </div>
+            <!-- プレースホルダー画像 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-white/30"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                ></path>
+              </svg>
+            </div>
+            <!-- オーバーレイ -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+            >
+            </div>
+          </div>
+
+          <!-- コンテンツ -->
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <span
+                class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                >コーポレート・EC</span
+              >
+              <span class="text-gray-400 text-xs">2023年</span>
+            </div>
+            <h3 class="text-xl font-medium text-white mb-2">
+              乳製品メーカーサイト
+            </h3>
+            <p class="text-gray-400 font-light text-sm mb-4">
+              乳製品メーカーの企業サイトとオンラインショップ。視覚的なコンテンツで商品の魅力を表現。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 実績6: 地域工芸品 -->
+      <div class="work-item group" data-category="ec">
+        <div
+          class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+        >
+          <!-- サムネイル -->
+          <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+            <div
+              class="w-full h-full bg-gradient-to-br from-purple-800/80 to-pink-700/80 group-hover:scale-105 transition-transform duration-500"
+            >
+            </div>
+            <!-- プレースホルダー画像 -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-white/30"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                ></path>
+              </svg>
+            </div>
+            <!-- オーバーレイ -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+            >
+            </div>
+          </div>
+
+          <!-- コンテンツ -->
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <span
+                class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                >ECサイト</span
+              >
+              <span class="text-gray-400 text-xs">2024年</span>
+            </div>
+            <h3 class="text-xl font-medium text-white mb-2">
+              工芸品販売サイト
+            </h3>
+            <p class="text-gray-400 font-light text-sm mb-4">
+              地域の工芸作家の作品を集めたECサイト。作家のストーリーと制作過程の魅力を伝えるデザイン。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- もっと見るボタン -->
+    <div class="text-center">
+      <a
+        href="#"
+        class="inline-flex items-center px-6 py-3 text-sm tracking-wider text-white border border-indigo-500/50 rounded-sm hover:bg-indigo-700/30 transition-colors"
+      >
+        <span>もっと実績を見る</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 ml-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* グリッドオーバーレイ */
+  .grid-overlay {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* アスペクト比 */
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 16;
+  }
+
+  .aspect-h-12 {
+    --tw-aspect-h: 12;
+  }
+
+  .aspect-w-16 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // フィルタリング機能
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const workItems = document.querySelectorAll(".work-item");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // アクティブクラスを全て削除
+        filterBtns.forEach((b) =>
+          b.classList.remove("active", "bg-indigo-700/50", "text-white")
+        );
+        filterBtns.forEach((b) =>
+          b.classList.add("bg-white/5", "text-gray-300")
+        );
+
+        // クリックされたボタンをアクティブに
+        btn.classList.remove("bg-white/5", "text-gray-300");
+        btn.classList.add("active", "bg-indigo-700/50", "text-white");
+
+        // フィルタリング
+        const filter = btn.getAttribute("data-filter");
+
+        workItems.forEach((item) => {
+          if (filter === "all") {
+            item.style.display = "block";
+          } else {
+            const categories = item.getAttribute("data-category").split(" ");
+            if (categories.includes(filter)) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          }
+        });
+      });
+    });
+  });
+</script>

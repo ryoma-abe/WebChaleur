@@ -1,0 +1,152 @@
+<!-- ヘッダーナビゲーション -->
+<header
+  class="flex items-center justify-between fixed top-0 left-0 z-50 w-full py-4 px-6 transition-all duration-300"
+  id="main-header"
+>
+  <a href="/" class="flex items-center space-x-3 transition-all duration-300" id="logo-container">
+    <div class="relative w-6 h-6">
+      <div
+        class="absolute w-6 h-6 border border-blue-400 rounded-sm transform rotate-45 animate-pulse-slow"
+      >
+      </div>
+    </div>
+    <div>
+      <span class="text-xl font-light tracking-wider text-white"
+        >WebChaleur</span
+      >
+    </div>
+  </a>
+  <nav class="hidden md:flex items-center space-x-8">
+    <a
+      href="#services"
+      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
+    >
+      サービス
+    </a>
+    <a
+      href="#works"
+      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
+    >
+      実績
+    </a>
+    <a
+      href="#about"
+      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
+    >
+      十勝の強み
+    </a>
+    <a
+      href="#contact"
+      class="px-5 py-2 text-xs font-medium tracking-wider text-white uppercase transition-all border border-indigo-500 rounded-sm hover:bg-indigo-700"
+    >
+      お問い合わせ
+    </a>
+  </nav>
+  <button class="text-white md:hidden" id="menu-toggle">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-6 h-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</header>
+<!-- モバイルメニュー -->
+<div
+  class="fixed inset-0 z-50 hidden flex-col items-center justify-center space-y-8 backdrop-blur-lg bg-gray-900/95 md:hidden"
+  id="mobile-menu"
+>
+  <button class="absolute top-4 right-4 text-white" id="menu-close">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-6 h-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1"
+        d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+  <a href="#services" class="text-lg font-light tracking-wider text-white"
+    >サービス</a
+  >
+  <a href="#works" class="text-lg font-light tracking-wider text-white">実績</a>
+  <a href="#about" class="text-lg font-light tracking-wider text-white"
+    >十勝の強み</a
+  >
+  <a
+    href="#contact"
+    class="px-6 py-2 text-xs font-medium tracking-wider text-white uppercase border border-indigo-500 hover:bg-indigo-700"
+    >お問い合わせ</a
+  >
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuClose = document.getElementById("menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const header = document.getElementById("main-header");
+    const logoContainer = document.getElementById("logo-container");
+    
+    if (menuToggle && menuClose && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.add("flex");
+      });
+      menuClose.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+      });
+    }
+    
+    // スクロールイベントを追加
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        // スクロールしたら背景を追加
+        header.classList.add("bg-gray-900/90");
+        header.classList.add("backdrop-blur-sm");
+        header.classList.add("shadow-md");
+        
+        // ロゴを非表示
+        logoContainer.classList.add("opacity-0");
+        logoContainer.classList.add("transform");
+        logoContainer.classList.add("scale-0");
+        logoContainer.classList.add("-translate-x-10");
+      } else {
+        // トップにいるときは透明
+        header.classList.remove("bg-gray-900/90");
+        header.classList.remove("backdrop-blur-sm");
+        header.classList.remove("shadow-md");
+        
+        // ロゴを表示
+        logoContainer.classList.remove("opacity-0");
+        logoContainer.classList.remove("scale-0");
+        logoContainer.classList.remove("-translate-x-10");
+      }
+    });
+    
+    // ページ読み込み時に現在のスクロール位置をチェック
+    if (window.scrollY > 50) {
+      header.classList.add("bg-gray-900/90");
+      header.classList.add("backdrop-blur-sm");
+      header.classList.add("shadow-md");
+      
+      // ロゴを非表示
+      logoContainer.classList.add("opacity-0");
+      logoContainer.classList.add("transform");
+      logoContainer.classList.add("scale-0");
+      logoContainer.classList.add("-translate-x-10");
+    }
+  });
+</script>
