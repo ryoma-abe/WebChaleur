@@ -63,61 +63,79 @@ function getIconPath(iconName) {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
       {works.map((work) => (
         <div class="work-item group" data-category={work.category.join(' ')}>
-          <div
-            class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
-          >
-            <!-- サムネイル -->
-            <div class="aspect-w-16 aspect-h-12 overflow-hidden">
-              <div
-                class={`w-full h-full bg-gradient-to-br ${work.color} group-hover:scale-105 transition-transform duration-500`}
-              >
-              </div>
-              <!-- プレースホルダー画像 -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-12 h-12 text-white/30"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+          <a href={`/works/${work.id}`} class="block">
+            <div
+              class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+            >
+              <!-- サムネイル -->
+              <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+                <div
+                  class={`w-full h-full bg-gradient-to-br ${work.color} group-hover:scale-105 transition-transform duration-500`}
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d={getIconPath(work.icon)}
-                  ></path>
-                </svg>
+                </div>
+                <!-- プレースホルダー画像 -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-12 h-12 text-white/30"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      d={getIconPath(work.icon)}
+                    ></path>
+                  </svg>
+                </div>
+                <!-- オーバーレイ -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+                >
+                </div>
               </div>
-              <!-- オーバーレイ -->
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
-              >
-              </div>
-            </div>
 
-            <!-- コンテンツ -->
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-3">
-                <span
-                  class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
-                >
-                  {work.category.includes('ec') && work.category.includes('corporate') 
-                    ? 'コーポレート・EC'
-                    : work.category.includes('ec') 
-                      ? 'ECサイト' 
-                      : 'コーポレートサイト'}
-                </span>
-                <span class="text-gray-400 text-xs">{work.year}年</span>
+              <!-- コンテンツ -->
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <span
+                    class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                  >
+                    {work.category.includes('ec') && work.category.includes('corporate') 
+                      ? 'コーポレート・EC'
+                      : work.category.includes('ec') 
+                        ? 'ECサイト' 
+                        : 'コーポレートサイト'}
+                  </span>
+                  <span class="text-gray-400 text-xs">{work.year}年</span>
+                </div>
+                <h3 class="text-xl font-medium text-white mb-2">
+                  {work.title}
+                </h3>
+                <p class="text-gray-400 font-light text-sm mb-4">
+                  {work.description}
+                </p>
+                <div class="flex items-center text-indigo-400 text-sm">
+                  <span>詳細を見る</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </div>
               </div>
-              <h3 class="text-xl font-medium text-white mb-2">
-                {work.title}
-              </h3>
-              <p class="text-gray-400 font-light text-sm mb-4">
-                {work.description}
-              </p>
             </div>
-          </div>
+          </a>
         </div>
       ))}
     </div>
@@ -125,7 +143,7 @@ function getIconPath(iconName) {
     <!-- もっと見るボタン -->
     <div class="text-center">
       <a
-        href="#"
+        href="/works"
         class="inline-flex items-center px-6 py-3 text-sm tracking-wider text-white border border-indigo-500/50 rounded-sm hover:bg-indigo-700/30 transition-colors"
       >
         <span>もっと実績を見る</span>
