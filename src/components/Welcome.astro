@@ -329,13 +329,13 @@
     </svg>
   </div>
 
-  <!-- 重い3Dアニメーションを有効にするためのボタン (オプション) -->
+  <!-- 高品質表示ボタン - 修正版 -->
   <button
     id="enable-effects"
-    class="absolute top-4 right-4 px-3 py-1 text-xs bg-indigo-600/50 text-white rounded-sm hover:bg-indigo-600/70 transition-colors opacity-50 hover:opacity-100"
+    class="absolute bottom-20 right-4 px-3 py-1 text-xs bg-indigo-600/50 text-white rounded-sm hover:bg-indigo-600/70 transition-colors opacity-50 hover:opacity-100 z-40"
     style="display: none;"
   >
-    高品質表示
+    高品質表示OFF
   </button>
 </section>
 
@@ -366,15 +366,14 @@
     opacity: 0;
   }
 </style>
-
 <script>
   // 軽量な初期化スクリプト
   document.addEventListener("DOMContentLoaded", () => {
     // スクロールアニメーションなどの基本的な要素
     setupBasicAnimations();
 
-    // インタラクションがあったらリッチエフェクトを読み込む
-    setupLazyEffects();
+    // 高品質表示ボタンの設定
+    setupQualityToggleButton();
 
     // ユーザーインタラクション検出 (スクロール/マウス移動/タップ)
     detectUserInteraction();
@@ -401,33 +400,84 @@
     fadeElements.forEach((el) => observer.observe(el));
   }
 
-  // 高度なエフェクトの遅延読み込み
-  function setupLazyEffects() {
-    // 高品質表示ボタンを表示
+  // 高品質表示ボタンの設定 - 修正版
+  function setupQualityToggleButton() {
     const effectsButton = document.getElementById("enable-effects");
-    if (effectsButton) {
-      // 3秒後にボタンを表示 (ユーザーにオプションを提供)
-      setTimeout(() => {
-        effectsButton.style.display = "block";
-      }, 3000);
+    if (!effectsButton) return;
 
-      // ボタンクリックでリッチエフェクトを読み込む
-      effectsButton.addEventListener("click", () => {
-        loadRichEffects();
+    // 状態管理の改善
+    let effectsEnabled = false;
+    let isLoading = false;
+
+    // 3秒後にボタンを表示
+    setTimeout(() => {
+      effectsButton.style.display = "block";
+    }, 3000);
+
+    // ボタンクリックイベントの改善
+    effectsButton.addEventListener("click", async () => {
+      // 読み込み中は操作不可
+      if (isLoading) return;
+
+      if (!effectsEnabled) {
+        // OFFからONに切り替え
+        isLoading = true;
         effectsButton.textContent = "読み込み中...";
         effectsButton.disabled = true;
-      });
-    }
+
+        try {
+          await loadRichEffects();
+          effectsEnabled = true;
+          effectsButton.textContent = "高品質表示ON";
+          effectsButton.classList.remove("bg-indigo-600/50");
+          effectsButton.classList.add("bg-green-600/50");
+        } catch (error) {
+          console.error("エフェクト読み込みエラー:", error);
+          effectsButton.textContent = "高品質表示OFF (エラー)";
+        } finally {
+          isLoading = false;
+          effectsButton.disabled = false;
+        }
+      } else {
+        // ONからOFFに切り替え
+        isLoading = true;
+        effectsButton.textContent = "切替中...";
+        effectsButton.disabled = true;
+
+        try {
+          disableRichEffects();
+          effectsEnabled = false;
+          effectsButton.textContent = "高品質表示OFF";
+          effectsButton.classList.remove("bg-green-600/50");
+          effectsButton.classList.add("bg-indigo-600/50");
+        } catch (error) {
+          console.error("エフェクト無効化エラー:", error);
+        } finally {
+          isLoading = false;
+          effectsButton.disabled = false;
+        }
+      }
+    });
   }
 
   // ユーザーインタラクションの検出
+  let hasInteracted = false;
   function detectUserInteraction() {
-    let hasInteracted = false;
     const triggerRichEffects = () => {
       if (!hasInteracted) {
         hasInteracted = true;
         // 1.5秒後 (ページ読み込み完了を確認するため) にエフェクト読み込み
-        setTimeout(loadRichEffects, 1500);
+        setTimeout(() => {
+          const effectsButton = document.getElementById("enable-effects");
+          if (effectsButton && effectsButton.textContent === "高品質表示OFF") {
+            // ユーザーがまだ切り替えていない場合のみ自動読み込み
+            loadRichEffects().then(() => {
+              effectsButton.textContent = "高品質表示ON";
+              effectsButton.classList.remove("bg-indigo-600/50");
+              effectsButton.classList.add("bg-green-600/50");
+            });
+          }
+        }, 1500);
       }
     };
 
@@ -435,7 +485,7 @@
     window.addEventListener(
       "scroll",
       () => {
-        if (window.scrollY > window.innerHeight && !hasInteracted) {
+        if (window.scrollY > window.innerHeight * 0.5 && !hasInteracted) {
           triggerRichEffects();
         }
       },
@@ -456,53 +506,117 @@
     );
   }
 
-  // リッチエフェクトの読み込み (Three.js)
-  async function loadRichEffects() {
-    try {
-      // 機能検出 (ブラウザパフォーマンスを確認)
-      const canUseRichEffects =
-        "IntersectionObserver" in window &&
-        !matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      if (!canUseRichEffects) {
-        console.log(
-          "ブラウザが高度なエフェクトをサポートしていないか、ユーザーが省モーションを好んでいます"
-        );
-        return;
-      }
-
-      // Three.jsを動的に読み込み
-      const threeScript = document.createElement("script");
-      threeScript.src =
-        "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
-      threeScript.async = true;
-      document.head.appendChild(threeScript);
-
-      // スクリプト読み込み完了後に初期化
-      threeScript.onload = () => {
-        // 読み込み完了後にコンテナを表示
+  // リッチエフェクトを無効化する関数 - 修正版
+  function disableRichEffects() {
+    return new Promise((resolve) => {
+      try {
+        // Three.jsのコンテナを非表示に
         const container = document.getElementById("three-container");
         if (container) {
-          container.style.opacity = "1";
-          initThreeAnimation(container);
+          container.style.opacity = "0";
+
+          // アニメーションを停止・クリーンアップ
+          if (
+            window.threeCleanup &&
+            typeof window.threeCleanup === "function"
+          ) {
+            window.threeCleanup();
+          }
+
+          // 少し待ってからコンテナをクリア (アニメーション完了後)
+          setTimeout(() => {
+            container.innerHTML = "";
+
+            // パーティクルもクリア
+            const particleContainer = document.querySelector(
+              ".particle-container"
+            );
+            if (particleContainer) {
+              particleContainer.innerHTML = "";
+            }
+
+            resolve();
+          }, 500); // フェードアウトを待つ
+        } else {
+          resolve();
+        }
+      } catch (error) {
+        console.error("エフェクト無効化中にエラーが発生しました:", error);
+        resolve(); // エラーでも解決する
+      }
+    });
+  }
+
+  // リッチエフェクトの読み込み - 修正版
+  function loadRichEffects() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        // 機能検出 (ブラウザパフォーマンスを確認)
+        const canUseRichEffects =
+          "IntersectionObserver" in window &&
+          !matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!canUseRichEffects) {
+          console.log(
+            "ブラウザが高度なエフェクトをサポートしていないか、ユーザーが省モーションを好んでいます"
+          );
+          return reject(new Error("エフェクトはサポートされていません"));
         }
 
-        // パーティクルも初期化
-        initParticles();
-
-        // ボタンを更新
-        const effectsButton = document.getElementById("enable-effects");
-        if (effectsButton) {
-          effectsButton.textContent = "高品質表示ON";
-          effectsButton.style.opacity = "0.2";
+        // Three.jsが既に読み込まれているかチェック
+        if (window.THREE) {
+          initializeEffects();
+          return resolve();
         }
-      };
-    } catch (error) {
-      console.error(
-        "リッチエフェクトの読み込み中にエラーが発生しました:",
-        error
-      );
+
+        // Three.jsを動的に読み込み
+        const threeScript = document.createElement("script");
+        threeScript.src =
+          "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+        threeScript.async = true;
+
+        // エラーハンドリングを追加
+        threeScript.onerror = () => {
+          reject(new Error("Three.js の読み込みに失敗しました"));
+        };
+
+        threeScript.onload = () => {
+          initializeEffects();
+          resolve();
+        };
+
+        document.head.appendChild(threeScript);
+
+        // タイムアウト設定（10秒でタイムアウト）
+        setTimeout(() => {
+          if (!window.THREE) {
+            reject(new Error("Three.js の読み込みがタイムアウトしました"));
+          }
+        }, 10000);
+      } catch (error) {
+        console.error(
+          "リッチエフェクトの読み込み中にエラーが発生しました:",
+          error
+        );
+        reject(error);
+      }
+    });
+  }
+
+  // エフェクトの初期化（Three.js + パーティクル）
+  function initializeEffects() {
+    // 読み込み完了後にコンテナを表示
+    const container = document.getElementById("three-container");
+    if (container) {
+      initThreeAnimation(container);
+      // アニメーション初期化後にフェードイン
+      setTimeout(() => {
+        container.style.opacity = "1";
+      }, 100);
     }
+
+    // パーティクルも初期化
+    initParticles();
   }
 
   // Three.jsアニメーション初期化 (簡略化版)
@@ -644,8 +758,8 @@
 
     animate();
 
-    // ページ離脱時にアニメーションをクリーンアップ
-    return () => {
+    // クリーンアップ関数をグローバルに保存
+    window.threeCleanup = function () {
       cancelAnimationFrame(animationFrameId);
       // メモリリーク防止のためのクリーンアップ
       meshes.forEach((mesh) => {
@@ -661,6 +775,9 @@
   function initParticles() {
     const container = document.querySelector(".particle-container");
     if (!container) return;
+
+    // 既存のパーティクルをクリア
+    container.innerHTML = "";
 
     // パーティクルの数を減らす (モバイルではさらに削減)
     const PARTICLE_COUNT = window.innerWidth < 768 ? 20 : 40;
@@ -690,8 +807,11 @@
     }
 
     // キーフレームアニメーションの追加
-    const styleSheet = document.createElement("style");
-    styleSheet.textContent = `
+    // スタイルシートが既に存在する場合は追加しない
+    if (!document.getElementById("particle-animation-style")) {
+      const styleSheet = document.createElement("style");
+      styleSheet.id = "particle-animation-style";
+      styleSheet.textContent = `
       @keyframes float {
         0% {
           transform: translateY(0) translateX(0);
@@ -709,6 +829,7 @@
         }
       }
     `;
-    document.head.appendChild(styleSheet);
+      document.head.appendChild(styleSheet);
+    }
   }
 </script>
