@@ -1,55 +1,26 @@
----
-// HeroSection.astro (完全中央揃え版)
----
-
 <section
   class="relative w-full min-h-screen overflow-hidden flex items-center justify-center bg-gradient-to-b from-gray-900 via-blue-900 to-indigo-900"
 >
-  <!-- 強化した幾何学模様の背景 -->
+  <!-- 簡略化した背景 (初期表示用) -->
   <div class="absolute inset-0 z-0 overflow-hidden">
-    <!-- 3D幾何学アニメーション -->
-    <div id="three-container" class="absolute inset-0"></div>
-
-    <!-- パーティクルレイヤー -->
-    <div class="particle-container absolute inset-0"></div>
-
-    <!-- グラデーションオーバーレイ -->
+    <!-- グラデーションオーバーレイ (軽量) -->
     <div
       class="absolute inset-0 bg-gradient-to-tr from-blue-900/40 via-transparent to-transparent"
     >
     </div>
 
-    <!-- 幾何学模様オーバーレイ -->
+    <!-- 簡略化したグリッドオーバーレイ (軽量) -->
     <div class="absolute inset-0 geometric-grid opacity-40"></div>
 
-    <!-- 六角形パターン -->
+    <!-- 3D幾何学アニメーション用プレースホルダー -->
     <div
-      class="absolute top-0 right-0 w-full h-full hexagon-pattern opacity-20"
+      id="three-container"
+      class="absolute inset-0 opacity-0 transition-opacity duration-1000"
     >
     </div>
 
-    <!-- サークルパターン - より大きく、目立つように -->
-    <div
-      class="absolute top-0 left-0 w-full h-full circle-pattern-large opacity-25"
-    >
-    </div>
-
-    <!-- 対角線パターン -->
-    <div
-      class="absolute bottom-0 right-0 w-full h-full diagonal-pattern opacity-15"
-    >
-    </div>
-
-    <!-- 波形パターン -->
-    <div class="absolute right-0 top-1/3 wave-pattern opacity-15 w-full h-64">
-    </div>
-
-    <!-- 幾何学装飾要素 - 明示的な形状 -->
-    <div class="absolute top-20 right-20 geometric-square opacity-40"></div>
-    <div class="absolute bottom-40 left-20 geometric-circle opacity-30"></div>
-    <div class="absolute top-1/3 left-1/4 geometric-triangle opacity-25"></div>
-    <div class="absolute bottom-1/4 right-1/4 geometric-diamond opacity-30">
-    </div>
+    <!-- パーティクルレイヤープレースホルダー -->
+    <div class="particle-container absolute inset-0"></div>
   </div>
 
   <div
@@ -132,13 +103,9 @@
         <div
           class="group relative overflow-hidden backdrop-blur-md bg-white/5 border border-white/10 p-6 rounded-sm transition-all duration-300 hover:bg-indigo-900/20 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/10"
         >
-          <!-- 装飾的な背景要素 -->
+          <!-- 装飾的な背景要素 (シンプル化) -->
           <div
-            class="absolute -right-12 -top-12 w-32 h-32 bg-indigo-600/10 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-700"
-          >
-          </div>
-          <div
-            class="absolute -left-16 -bottom-16 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-700"
+            class="absolute -right-12 -top-12 w-32 h-32 bg-indigo-600/10 rounded-full blur-2xl"
           >
           </div>
 
@@ -187,13 +154,9 @@
         <div
           class="group relative overflow-hidden backdrop-blur-md bg-white/5 border border-white/10 p-6 rounded-sm transition-all duration-300 hover:bg-indigo-900/20 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/10"
         >
-          <!-- 装飾的な背景要素 -->
+          <!-- 装飾的な背景要素 (シンプル化) -->
           <div
-            class="absolute -right-12 -top-12 w-32 h-32 bg-indigo-600/10 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-700"
-          >
-          </div>
-          <div
-            class="absolute -left-16 -bottom-16 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-700"
+            class="absolute -right-12 -top-12 w-32 h-32 bg-indigo-600/10 rounded-full blur-2xl"
           >
           </div>
 
@@ -241,13 +204,9 @@
         <div
           class="group relative overflow-hidden backdrop-blur-md bg-white/5 border border-white/10 p-6 rounded-sm transition-all duration-300 hover:bg-indigo-900/20 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/10"
         >
-          <!-- 装飾的な背景要素 -->
+          <!-- 装飾的な背景要素 (シンプル化) -->
           <div
-            class="absolute -right-12 -top-12 w-32 h-32 bg-indigo-600/10 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-700"
-          >
-          </div>
-          <div
-            class="absolute -left-16 -bottom-16 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl transform group-hover:scale-150 transition-transform duration-700"
+            class="absolute -right-12 -top-12 w-32 h-32 bg-indigo-600/10 rounded-full blur-2xl"
           >
           </div>
 
@@ -369,229 +328,189 @@
         d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
     </svg>
   </div>
+
+  <!-- 重い3Dアニメーションを有効にするためのボタン (オプション) -->
+  <button
+    id="enable-effects"
+    class="absolute top-4 right-4 px-3 py-1 text-xs bg-indigo-600/50 text-white rounded-sm hover:bg-indigo-600/70 transition-colors opacity-50 hover:opacity-100"
+    style="display: none;"
+  >
+    高品質表示
+  </button>
 </section>
 
 <style>
-  /* 幾何学グリッド */
+  /* 幾何学グリッド (軽量版) */
   .geometric-grid {
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.1) 1px,
+        rgba(255, 255, 255, 0.05) 1px,
         transparent 1px
       ),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size:
-      100px 100px,
-      100px 100px,
-      20px 20px,
-      20px 20px;
-    background-position:
-      -1px -1px,
-      -1px -1px,
-      -1px -1px,
-      -1px -1px;
+    background-size: 100px 100px;
   }
 
-  /* 大きなサークルパターン */
-  .circle-pattern-large {
-    background-image: radial-gradient(
-        circle at 20% 30%,
-        rgba(99, 102, 241, 0.15) 0,
-        rgba(99, 102, 241, 0) 150px
-      ),
-      radial-gradient(
-        circle at 80% 70%,
-        rgba(59, 130, 246, 0.15) 0,
-        rgba(59, 130, 246, 0) 150px
-      );
-  }
-
-  /* 六角形パターン */
-  .hexagon-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  /* 対角線パターン */
-  .diagonal-pattern {
-    background-image: repeating-linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.05),
-        rgba(255, 255, 255, 0.05) 2px,
-        transparent 2px,
-        transparent 10px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        rgba(255, 255, 255, 0.03),
-        rgba(255, 255, 255, 0.03) 2px,
-        transparent 2px,
-        transparent 10px
-      );
-  }
-
-  /* 波形パターン */
-  .wave-pattern {
-    background-image: repeating-radial-gradient(
-      circle at 50% 50%,
-      transparent,
-      transparent 40px,
-      rgba(255, 255, 255, 0.03) 40px,
-      rgba(255, 255, 255, 0.03) 80px
-    );
-  }
-
-  /* 幾何学装飾要素 */
-  .geometric-square {
-    width: 100px;
-    height: 100px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transform: rotate(45deg);
-    animation: rotateSlowly 20s linear infinite;
-  }
-
-  .geometric-circle {
-    width: 120px;
-    height: 120px;
-    border: 2px solid rgba(99, 102, 241, 0.2);
-    border-radius: 50%;
-    animation: pulseSlowly 15s ease-in-out infinite;
-  }
-
-  .geometric-triangle {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 86px solid rgba(255, 255, 255, 0.1);
-    animation: rotateSlowly 25s linear infinite reverse;
-  }
-
-  .geometric-diamond {
-    width: 80px;
-    height: 80px;
-    border: 2px solid rgba(59, 130, 246, 0.2);
-    transform: rotate(45deg);
-    animation: pulseAndRotate 18s ease-in-out infinite;
-  }
-
-  /* パーティクルアニメーション */
-  .particle-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* アニメーション定義 */
-  @keyframes rotateSlowly {
-    0% {
-      transform: rotate(0deg);
+  /* アニメーション定義を簡略化 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
-    100% {
-      transform: rotate(360deg);
+    to {
+      opacity: 1;
     }
   }
 
-  @keyframes pulseSlowly {
-    0%,
-    100% {
-      transform: scale(1);
-      opacity: 0.2;
-    }
-    50% {
-      transform: scale(1.2);
-      opacity: 0.3;
-    }
-  }
-
-  @keyframes pulseAndRotate {
-    0%,
-    100% {
-      transform: rotate(45deg) scale(1);
-      opacity: 0.2;
-    }
-    50% {
-      transform: rotate(225deg) scale(1.2);
-      opacity: 0.3;
-    }
+  /* スムーズなアニメーション */
+  .fadein-element {
+    animation: fadeIn 0.5s ease-in forwards;
+    opacity: 0;
   }
 </style>
 
 <script>
+  // 軽量な初期化スクリプト
   document.addEventListener("DOMContentLoaded", () => {
-    // 3D幾何学アニメーションの初期化
-    initThreeAnimation();
+    // スクロールアニメーションなどの基本的な要素
+    setupBasicAnimations();
 
-    // パーティクルアニメーションの初期化
-    initParticles();
+    // インタラクションがあったらリッチエフェクトを読み込む
+    setupLazyEffects();
+
+    // ユーザーインタラクション検出 (スクロール/マウス移動/タップ)
+    detectUserInteraction();
   });
 
-  function initParticles() {
-    const container = document.querySelector(".particle-container");
-    if (!container) return;
+  // 基本的なアニメーション設定
+  function setupBasicAnimations() {
+    // 軽量なフェードインアニメーション
+    const fadeElements = document.querySelectorAll(".group");
 
-    // パーティクルの数
-    const PARTICLE_COUNT = 70;
+    // 交差オブザーバーを使って要素が表示されたときだけアニメーション
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fadein-element");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      const particle = document.createElement("div");
+    fadeElements.forEach((el) => observer.observe(el));
+  }
 
-      // パーティクルのスタイル
-      particle.style.position = "absolute";
-      particle.style.width = `${Math.random() * 6 + 1}px`;
-      particle.style.height = particle.style.width;
-      particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})`;
-      particle.style.borderRadius = "50%";
+  // 高度なエフェクトの遅延読み込み
+  function setupLazyEffects() {
+    // 高品質表示ボタンを表示
+    const effectsButton = document.getElementById("enable-effects");
+    if (effectsButton) {
+      // 3秒後にボタンを表示 (ユーザーにオプションを提供)
+      setTimeout(() => {
+        effectsButton.style.display = "block";
+      }, 3000);
 
-      // 初期位置
-      particle.style.left = `${Math.random() * 100}%`;
-      particle.style.top = `${Math.random() * 100}%`;
-
-      // アニメーション
-      particle.style.animation = `float ${Math.random() * 15 + 10}s linear infinite`;
-      particle.style.opacity = "0";
-
-      // アニメーションの遅延
-      particle.style.animationDelay = `${Math.random() * 5}s`;
-
-      container.appendChild(particle);
+      // ボタンクリックでリッチエフェクトを読み込む
+      effectsButton.addEventListener("click", () => {
+        loadRichEffects();
+        effectsButton.textContent = "読み込み中...";
+        effectsButton.disabled = true;
+      });
     }
+  }
 
-    // キーフレームアニメーションの追加
-    const styleSheet = document.createElement("style");
-    styleSheet.textContent = `
-      @keyframes float {
-        0% {
-          transform: translateY(0) translateX(0);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-120px) translateX(${Math.random() * 100 - 50}px);
-          opacity: 0;
-        }
+  // ユーザーインタラクションの検出
+  function detectUserInteraction() {
+    let hasInteracted = false;
+    const triggerRichEffects = () => {
+      if (!hasInteracted) {
+        hasInteracted = true;
+        // 1.5秒後 (ページ読み込み完了を確認するため) にエフェクト読み込み
+        setTimeout(loadRichEffects, 1500);
       }
-    `;
-    document.head.appendChild(styleSheet);
+    };
+
+    // スクロールが最初の画面を過ぎたら読み込み
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > window.innerHeight && !hasInteracted) {
+          triggerRichEffects();
+        }
+      },
+      { passive: true }
+    );
+
+    // マウス移動でも読み込み (十分な動きがあった場合)
+    let mouseMovements = 0;
+    window.addEventListener(
+      "mousemove",
+      () => {
+        mouseMovements++;
+        if (mouseMovements > 15 && !hasInteracted) {
+          triggerRichEffects();
+        }
+      },
+      { passive: true }
+    );
   }
 
-  function initThreeAnimation() {
-    // Three.jsのスクリプトを動的に読み込み
-    const script = document.createElement("script");
-    script.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
-    script.onload = setupAnimation;
-    document.head.appendChild(script);
+  // リッチエフェクトの読み込み (Three.js)
+  async function loadRichEffects() {
+    try {
+      // 機能検出 (ブラウザパフォーマンスを確認)
+      const canUseRichEffects =
+        "IntersectionObserver" in window &&
+        !matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!canUseRichEffects) {
+        console.log(
+          "ブラウザが高度なエフェクトをサポートしていないか、ユーザーが省モーションを好んでいます"
+        );
+        return;
+      }
+
+      // Three.jsを動的に読み込み
+      const threeScript = document.createElement("script");
+      threeScript.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+      threeScript.async = true;
+      document.head.appendChild(threeScript);
+
+      // スクリプト読み込み完了後に初期化
+      threeScript.onload = () => {
+        // 読み込み完了後にコンテナを表示
+        const container = document.getElementById("three-container");
+        if (container) {
+          container.style.opacity = "1";
+          initThreeAnimation(container);
+        }
+
+        // パーティクルも初期化
+        initParticles();
+
+        // ボタンを更新
+        const effectsButton = document.getElementById("enable-effects");
+        if (effectsButton) {
+          effectsButton.textContent = "高品質表示ON";
+          effectsButton.style.opacity = "0.2";
+        }
+      };
+    } catch (error) {
+      console.error(
+        "リッチエフェクトの読み込み中にエラーが発生しました:",
+        error
+      );
+    }
   }
 
-  function setupAnimation() {
-    const container = document.getElementById("three-container");
-    if (!container) return;
+  // Three.jsアニメーション初期化 (簡略化版)
+  function initThreeAnimation(container) {
+    if (!window.THREE) {
+      console.error("Three.js が読み込まれていません");
+      return;
+    }
 
     // シーンの設定
     const scene = new THREE.Scene();
@@ -611,32 +530,20 @@
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
 
-    // ジオメトリの作成
-    const geometries = [];
-    const materials = [];
+    // 軽量化のため、オブジェクト数を削減
+    const meshCount = window.innerWidth < 768 ? 15 : 30; // モバイルではさらに削減
     const meshes = [];
 
-    // 複数のオブジェクトを作成 - 数を増やす
-    for (let i = 0; i < 50; i++) {
-      let geometry;
-      const type = Math.floor(Math.random() * 5);
+    // 3Dオブジェクトを作成 (簡略化)
+    for (let i = 0; i < meshCount; i++) {
+      // 形状をランダムに選択
+      const geometry = [
+        new THREE.IcosahedronGeometry(0.3, 0),
+        new THREE.TetrahedronGeometry(0.4, 0),
+        new THREE.BoxGeometry(0.4, 0.4, 0.4),
+      ][Math.floor(Math.random() * 3)];
 
-      // より多様な形状を選択
-      if (type === 0) {
-        geometry = new THREE.IcosahedronGeometry(0.3, 0);
-      } else if (type === 1) {
-        geometry = new THREE.TetrahedronGeometry(0.4, 0);
-      } else if (type === 2) {
-        geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
-      } else if (type === 3) {
-        geometry = new THREE.OctahedronGeometry(0.3, 0);
-      } else {
-        geometry = new THREE.DodecahedronGeometry(0.3, 0);
-      }
-
-      geometries.push(geometry);
-
-      // マテリアルを作成 - 色をより鮮やかに
+      // マテリアルを作成 (ワイヤーフレームのみ)
       const material = new THREE.MeshBasicMaterial({
         color: new THREE.Color(
           Math.random() * 0.2 + 0.1,
@@ -645,33 +552,27 @@
         ),
         wireframe: true,
         transparent: true,
-        opacity: Math.random() * 0.3 + 0.2, // 不透明度を上げる
+        opacity: Math.random() * 0.3 + 0.2,
       });
-
-      materials.push(material);
 
       // メッシュを作成
       const mesh = new THREE.Mesh(geometry, material);
 
-      // より広い範囲にランダムな位置に配置
-      mesh.position.x = (Math.random() - 0.5) * 20;
-      mesh.position.y = (Math.random() - 0.5) * 20;
-      mesh.position.z = (Math.random() - 0.5) * 10;
+      // 広い範囲ではなく画面中央付近に配置
+      mesh.position.x = (Math.random() - 0.5) * 15;
+      mesh.position.y = (Math.random() - 0.5) * 15;
+      mesh.position.z = (Math.random() - 0.5) * 8;
 
-      // 回転の初期値
-      mesh.rotation.x = Math.random() * Math.PI;
-      mesh.rotation.y = Math.random() * Math.PI;
-
-      // メッシュにアニメーション用のデータを追加 - より速い動きに
+      // 回転速度を抑える
       mesh.userData = {
         rotationSpeed: {
-          x: (Math.random() - 0.5) * 0.015,
-          y: (Math.random() - 0.5) * 0.015,
-          z: (Math.random() - 0.5) * 0.015,
+          x: (Math.random() - 0.5) * 0.01,
+          y: (Math.random() - 0.5) * 0.01,
+          z: (Math.random() - 0.5) * 0.01,
         },
         floating: {
-          speed: Math.random() * 0.007 + 0.003,
-          factor: Math.random() * 2.5 + 1,
+          speed: Math.random() * 0.005 + 0.002,
+          factor: Math.random() * 2 + 1,
           time: Math.random() * 100,
         },
       };
@@ -680,54 +581,134 @@
       scene.add(mesh);
     }
 
-    // リサイズハンドラ
+    // リサイズハンドラ (デバウンス付き)
+    let resizeTimeout;
     window.addEventListener("resize", () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }, 250);
     });
 
-    // マウス操作
+    // マウス操作 (パフォーマンス考慮)
     const mouse = { x: 0, y: 0 };
+    let mouseMoveTimeout;
 
-    document.addEventListener("mousemove", (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    });
+    document.addEventListener(
+      "mousemove",
+      (event) => {
+        clearTimeout(mouseMoveTimeout);
+        mouseMoveTimeout = setTimeout(() => {
+          mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        }, 50); // 50ms毎に更新 (節約)
+      },
+      { passive: true }
+    );
 
-    // アニメーションループ
+    // アニメーションループ (最適化)
+    let animationFrameId;
+    let frameSkip = 0; // フレームスキップカウンター
+
     function animate() {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
 
-      // カメラを微妙に動かす
-      camera.position.x += (mouse.x * 0.7 - camera.position.x) * 0.05;
-      camera.position.y += (mouse.y * 0.7 - camera.position.y) * 0.05;
+      // 低スペックデバイスではフレームをスキップして負荷軽減
+      frameSkip++;
+      if (frameSkip % 2 !== 0) return; // 2フレームに1回だけ処理
+
+      // カメラをゆっくり動かす
+      camera.position.x += (mouse.x * 0.5 - camera.position.x) * 0.03;
+      camera.position.y += (mouse.y * 0.5 - camera.position.y) * 0.03;
       camera.lookAt(scene.position);
 
-      // 各オブジェクトを回転
+      // オブジェクトをゆっくり回転
       meshes.forEach((mesh) => {
         mesh.rotation.x += mesh.userData.rotationSpeed.x;
         mesh.rotation.y += mesh.userData.rotationSpeed.y;
-        mesh.rotation.z += mesh.userData.rotationSpeed.z;
 
-        // 浮遊アニメーション
+        // 浮遊アニメーション (簡略化)
         mesh.userData.floating.time += mesh.userData.floating.speed;
         const floatY =
           Math.sin(mesh.userData.floating.time) *
-          0.12 *
-          mesh.userData.floating.factor;
-        const floatX =
-          Math.cos(mesh.userData.floating.time * 0.7) *
-          0.07 *
+          0.1 *
           mesh.userData.floating.factor;
 
         mesh.position.y += floatY * 0.01;
-        mesh.position.x += floatX * 0.01;
       });
 
       renderer.render(scene, camera);
     }
 
     animate();
+
+    // ページ離脱時にアニメーションをクリーンアップ
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      // メモリリーク防止のためのクリーンアップ
+      meshes.forEach((mesh) => {
+        mesh.geometry.dispose();
+        mesh.material.dispose();
+        scene.remove(mesh);
+      });
+      renderer.dispose();
+    };
+  }
+
+  // パーティクルアニメーションの初期化（軽量版）
+  function initParticles() {
+    const container = document.querySelector(".particle-container");
+    if (!container) return;
+
+    // パーティクルの数を減らす (モバイルではさらに削減)
+    const PARTICLE_COUNT = window.innerWidth < 768 ? 20 : 40;
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const particle = document.createElement("div");
+
+      // パーティクルのスタイル
+      particle.style.position = "absolute";
+      particle.style.width = `${Math.random() * 4 + 1}px`;
+      particle.style.height = particle.style.width;
+      particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.2 + 0.1})`;
+      particle.style.borderRadius = "50%";
+
+      // 初期位置 (画面上部に集中)
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 50}%`;
+
+      // アニメーション - より長い時間をかけてゆっくり動かす
+      particle.style.animation = `float ${Math.random() * 20 + 15}s linear infinite`;
+      particle.style.opacity = "0";
+
+      // アニメーションの遅延をランダム化
+      particle.style.animationDelay = `${Math.random() * 8}s`;
+
+      container.appendChild(particle);
+    }
+
+    // キーフレームアニメーションの追加
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.7;
+        }
+        90% {
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateY(-100px) translateX(${Math.random() * 60 - 30}px);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(styleSheet);
   }
 </script>
