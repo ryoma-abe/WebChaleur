@@ -1,0 +1,843 @@
+---
+import ServiceDetailLayout from "../../layouts/ServiceDetailLayout.astro";
+---
+
+<ServiceDetailLayout
+  title="SNS運用サポート"
+  serviceType="SNS運用支援"
+  description="各SNSプラットフォームの特性を活かした効果的な運用代行。コンテンツ企画から投稿管理、フォロワー獲得施策まで一貫してサポートします。"
+  icon="chat"
+>
+  <!-- サービスの特長セクション -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">サービスの特長</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 特長1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          SNS特性を活かした戦略設計
+        </h3>
+        <p class="text-gray-300 font-light">
+          Instagram、X（旧Twitter）、Facebook、LINEなど、各SNSの特性とアルゴリズムを深く理解し、プラットフォームごとに最適化された戦略を設計。御社のブランド価値を最大限に引き出す投稿設計を行います。
+        </p>
+      </div>
+
+      <!-- 特長2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          エンゲージメント重視のコンテンツ制作
+        </h3>
+        <p class="text-gray-300 font-light">
+          「いいね」やコメント、シェアを生み出す魅力的なコンテンツ企画と制作。十勝・帯広の地域性や季節感を取り入れながら、ターゲットユーザーの興味を引くビジュアルとテキストの組み合わせを提案します。
+        </p>
+      </div>
+
+      <!-- 特長3 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">
+          一貫した投稿運用代行
+        </h3>
+        <p class="text-gray-300 font-light">
+          日々の投稿作成からスケジュール管理、コメント対応まで一貫してサポート。時間のかかるSNS運用をプロに任せることで、本業に集中しながらもSNSマーケティングの効果を最大化できます。
+        </p>
+      </div>
+
+      <!-- 特長4 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <h3 class="text-xl font-medium text-white mb-4">データ分析と改善提案</h3>
+        <p class="text-gray-300 font-light">
+          投稿ごとのパフォーマンスを詳細に分析し、継続的な改善施策を提案。「なぜ伸びたのか」「何が響いたのか」を数値とユーザー心理の両面から解析し、より効果的なSNS運用へと進化させます。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 対応プラットフォーム -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">対応プラットフォーム</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Instagram -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">Instagram</h3>
+        <p class="text-gray-400 mb-4">ビジュアル重視のブランディングに最適</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">フィード・リール・ストーリーズ投稿</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">ハッシュタグ戦略</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">インフルエンサー連携</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- X(Twitter) -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">X (旧Twitter)</h3>
+        <p class="text-gray-400 mb-4">リアルタイム情報発信・対話に最適</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">トレンド対応投稿</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">ユーザー対話型運用</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">広告キャンペーン</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Facebook/LINE -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm text-center"
+      >
+        <h3 class="text-lg font-medium text-white mb-2">Facebook/LINE</h3>
+        <p class="text-gray-400 mb-4">コミュニティ形成・顧客関係構築</p>
+        <ul class="text-sm text-left space-y-2">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">コミュニティ運営</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">LINE公式アカウント運用</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300">メッセージ配信</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 運用プロセス -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">運用プロセス</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- ステップ1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">1</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              戦略設計・コンテンツ計画
+            </h3>
+            <p class="text-gray-300 font-light">
+              ブランドの方向性とターゲットに合わせたSNS戦略の策定、月間投稿計画の作成
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">2</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              コンテンツ制作・投稿管理
+            </h3>
+            <p class="text-gray-300 font-light">
+              各SNSに最適化したコンテンツ制作、投稿スケジュール管理と実施
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ3 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">3</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              エンゲージメント管理
+            </h3>
+            <p class="text-gray-300 font-light">
+              コメント・メッセージ対応、フォロワーとの積極的な交流
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ステップ4 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <div class="flex items-start">
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-900 text-white border border-indigo-500 mr-4"
+          >
+            <span class="text-sm font-semibold">4</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-medium text-white mb-2">
+              分析・レポート・改善
+            </h3>
+            <p class="text-gray-300 font-light">
+              定期的なパフォーマンス分析、月次レポート提出、継続的な戦略改善
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 料金プラン -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">料金プラン</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- ライトプラン -->
+      <div
+        class="relative p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm"
+      >
+        <h4 class="text-xl font-medium text-white mb-2">ライトプラン</h4>
+        <div class="flex items-end mb-4">
+          <span class="text-3xl font-light text-white">5</span>
+          <span class="text-xl text-indigo-400 font-light">万円/月</span>
+        </div>
+        <p class="text-gray-400 font-light text-sm mb-4">
+          小規模ビジネス・個人事業主向け
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">1プラットフォーム対応</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">週3回投稿</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">月次レポート</span>
+          </li>
+        </ul>
+        <div class="pt-2 border-t border-white/10">
+          <span class="block text-gray-400 text-sm mb-1">初期費用</span>
+          <span class="text-xl text-white"
+            >3<span class="text-indigo-400 font-light text-lg">万円</span></span
+          >
+        </div>
+      </div>
+
+      <!-- スタンダードプラン -->
+      <div
+        class="relative p-6 backdrop-blur-sm bg-indigo-900/30 border border-indigo-500/30 rounded-sm"
+      >
+        <div
+          class="absolute top-0 right-0 px-3 py-1 text-xs tracking-wider text-white bg-indigo-600 -mt-3 -mr-3"
+        >
+          人気
+        </div>
+        <h4 class="text-xl font-medium text-white mb-2">スタンダードプラン</h4>
+        <div class="flex items-end mb-4">
+          <span class="text-3xl font-light text-white">10</span>
+          <span class="text-xl text-indigo-400 font-light">万円/月</span>
+        </div>
+        <p class="text-gray-400 font-light text-sm mb-4">
+          中小企業・成長期のビジネス向け
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">2プラットフォーム対応</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">週5回投稿</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">コンテンツ企画・制作</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">週次・月次レポート</span>
+          </li>
+        </ul>
+        <div class="pt-2 border-t border-white/10">
+          <span class="block text-gray-400 text-sm mb-1">初期費用</span>
+          <span class="text-xl text-white"
+            >5<span class="text-indigo-400 font-light text-lg">万円</span></span
+          >
+        </div>
+      </div>
+
+      <!-- プレミアムプラン -->
+      <div
+        class="relative p-6 backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm"
+      >
+        <h4 class="text-xl font-medium text-white mb-2">プレミアムプラン</h4>
+        <div class="flex items-end mb-4">
+          <span class="text-3xl font-light text-white">15</span>
+          <span class="text-xl text-indigo-400 font-light">万円〜/月</span>
+        </div>
+        <p class="text-gray-400 font-light text-sm mb-4">
+          本格的なSNSマーケティングを展開したい企業向け
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">3プラットフォーム以上対応</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">毎日投稿</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 w-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">オリジナル写真・動画撮影</span>
+          </li>
+          <li class="flex items-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-300 text-sm">広告運用サポート</span>
+          </li>
+        </ul>
+        <div class="pt-2 border-t border-white/10">
+          <span class="block text-gray-400 text-sm mb-1">初期費用</span>
+          <span class="text-xl text-white">要相談</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 text-sm tracking-wider text-white bg-indigo-600 rounded-sm hover:bg-indigo-700 transition-colors"
+      >
+        詳細な見積もりを依頼する
+      </a>
+    </div>
+  </div>
+
+  <!-- 実績紹介 -->
+  <div>
+    <h2 class="text-2xl font-light text-white mb-8">運用実績</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- 実績1 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <span
+          class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm mb-3"
+        >
+          Instagram
+        </span>
+        <h3 class="text-xl font-medium text-white mb-2">地元カフェチェーン</h3>
+        <p class="text-gray-300 font-light mb-4">
+          十勝の食材を使ったメニューを中心に、季節感のある投稿を継続。6か月間でフォロワー数が3倍に増加し、店舗への来客数も20%向上しました。特に若年層の新規顧客獲得に貢献しています。
+        </p>
+      </div>
+
+      <!-- 実績2 -->
+      <div
+        class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm"
+      >
+        <span
+          class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm mb-3"
+        >
+          X/Instagram
+        </span>
+        <h3 class="text-xl font-medium text-white mb-2">観光体験施設</h3>
+        <p class="text-gray-300 font-light mb-4">
+          四季折々の体験コンテンツを訴求するSNS運用により、若年層のリピーター獲得に成功。特にリール動画の活用で予約数が35%増加し、全体の売上向上に貢献しました。地域情報の発信も好評です。
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a
+        href="/#works"
+        class="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors"
+      >
+        <span>すべての運用実績を見る</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 ml-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- SNSコンテンツ制作 -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-light text-white mb-8">SNSコンテンツ制作</h2>
+
+    <div class="bg-white/5 border border-white/10 p-8 rounded-sm">
+      <p class="text-gray-300 font-light mb-6">
+        SNS運用の成功には、質の高いコンテンツ制作が欠かせません。弊社では、各SNSの特性に合わせたコンテンツを企画・制作しています。
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 制作1 -->
+        <div>
+          <h3 class="text-xl font-medium text-white mb-3">写真・画像制作</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">商品・サービス撮影</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">グラフィックデザイン</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">キャンペーン用素材</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 制作2 -->
+        <div>
+          <h3 class="text-xl font-medium text-white mb-3">動画コンテンツ</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">Instagram/TikTokリール</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">ストーリーズ</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300">プロモーション動画</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 p-4 bg-indigo-900/30 border border-indigo-500/30 rounded-sm">
+        <h4 class="text-white font-medium mb-2">コンテンツ制作料金</h4>
+        <p class="text-gray-300 text-sm">
+          プラン料金には基本的なコンテンツ制作費が含まれていますが、大規模な撮影や特殊な制作が必要な場合は別途お見積りいたします。まずはご相談ください。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNS活用の重要性 -->
+  <div>
+    <h2 class="text-2xl font-light text-white mb-8">ビジネスにおけるSNS活用の重要性</h2>
+
+    <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-sm mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <!-- ポイント1 -->
+        <div>
+          <h3 class="text-xl font-medium text-white mb-3">顧客との信頼関係構築</h3>
+          <p class="text-gray-300 font-light">
+            SNSは単なる情報発信ツールではなく、顧客との双方向コミュニケーションを実現するプラットフォームです。日々の投稿や対話を通じて、ブランドへの親近感や信頼関係を構築できます。特に地方企業にとって、地域との絆を深める重要なチャネルとなります。
+          </p>
+        </div>
+
+        <!-- ポイント2 -->
+        <div>
+          <h3 class="text-xl font-medium text-white mb-3">潜在顧客へのリーチ</h3>
+          <p class="text-gray-300 font-light">
+            従来の広告では届かなかった層にもアプローチが可能です。十勝・帯広エリアのローカルビジネスであっても、SNSを活用することで全国、さらには海外の潜在顧客にもリーチでき、ビジネスの拡大につながります。
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-gray-400 italic mb-4">
+          「SNSによる情報発信を始めてから、遠方からの観光客が増え、店舗への問い合わせも倍増しました。」
+        </p>
+        <p class="text-indigo-400">- 十勝の観光施設 A様</p>
+      </div>
+    </div>
+
+    <!-- 最後のCTA -->
+    <div class="text-center">
+      <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+        SNS運用は継続的な取り組みが重要です。自社だけで運用するには時間や専門知識が必要ですが、プロに任せることで本業に集中しながら効果的なSNS活用が可能になります。まずはお気軽にご相談ください。
+      </p>
+      <a
+        href="#contact"
+        class="inline-flex items-center px-8 py-3 text-base tracking-wider text-white bg-indigo-600 rounded-sm hover:bg-indigo-700 transition-colors"
+      >
+        無料相談を申し込む
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 ml-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</ServiceDetailLayout>
