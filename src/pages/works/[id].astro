@@ -1,6 +1,7 @@
 ---
 import WorkDetailLayout from "../../layouts/WorkDetailLayout.astro";
 import portfolioData from '../../data/portfolio-data.json';
+import { Image } from 'astro:assets';
 // import { getImage } from "astro:assets";
 
 export async function getStaticPaths() {
@@ -33,6 +34,14 @@ function getTechnologies(categories) {
   return technologies.slice(0, 2); // 最大2つまで表示
 }
 
+// 画像が存在するかチェックする関数
+function hasValidImage(work: any): boolean {
+  return work.images && 
+         Array.isArray(work.images) && 
+         work.images.length > 0 && 
+         work.images[0].url;
+}
+
 // 使用した主な技術
 const technologies = getTechnologies(work.category);
 
@@ -59,7 +68,7 @@ const relatedWorks = portfolioData.works
     
     <!-- 詳細内容 -->
     <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-sm">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div class="mb-8">
         <!-- プロジェクト特徴 -->
         <div>
           <h3 class="text-xl font-medium text-white mb-4">プロジェクトの特徴</h3>
@@ -76,86 +85,41 @@ const relatedWorks = portfolioData.works
             ))}
           </div>
         </div>
-        
-        <!-- 成果・実績 -->
-        <div>
-          <h3 class="text-xl font-medium text-white mb-4">成果・実績</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0 transform translate-y-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300">
-                {work.results?.[0] || "サイト訪問者数が前年比150%に増加"}
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0 transform translate-y-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300">
-                {work.results?.[1] || "ページ滞在時間が30%向上"}
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-indigo-400 mr-2 flex-shrink-0 transform translate-y-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-300">
-                {work.results?.[2] || "コンバージョン率が2倍に改善"}
-              </span>
-            </li>
-          </ul>
-        </div>
       </div>
       
       <div class="pt-6 border-t border-white/10">
-        <h3 class="text-xl font-medium text-white mb-4">制作ポイント</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h4 class="text-white font-medium mb-2">デザイン</h4>
+        <h3 class="text-xl font-medium text-white mb-4 text-center">制作ポイント</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm">
+            <h4 class="text-white font-medium mb-3 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              デザイン
+            </h4>
             <p class="text-gray-400 text-sm">
               {work.designPoints || "ブランドイメージに合わせたカラーパレットと直感的なUIで、ユーザーの操作性を最優先にデザインしました。"}
             </p>
           </div>
-          <div>
-            <h4 class="text-white font-medium mb-2">機能性</h4>
+          <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm">
+            <h4 class="text-white font-medium mb-3 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              機能性
+            </h4>
             <p class="text-gray-400 text-sm">
               {work.functionalPoints || "高速なページ読み込みと、モバイルでの使いやすさを重視した実装で、あらゆるデバイスでの最適な体験を提供しています。"}
             </p>
           </div>
-          <div>
-            <h4 class="text-white font-medium mb-2">SEO</h4>
+          <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-6 rounded-sm">
+            <h4 class="text-white font-medium mb-3 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+              SEO
+            </h4>
             <p class="text-gray-400 text-sm">
               {work.seoPoints || "検索エンジン最適化の観点から、適切なマークアップと構造化データの実装により、検索結果での可視性向上に貢献しています。"}
             </p>
@@ -169,27 +133,73 @@ const relatedWorks = portfolioData.works
   <div class="mb-16">
     <h2 class="text-2xl font-light text-white mb-8">プロジェクト画像</h2>
     
-    <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-sm mb-6">
-      <div class={`w-full h-full ${work.color} flex items-center justify-center`}>
-        <!-- プロジェクト画像またはプレースホルダー -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-24 h-24 text-white/30"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
-            d={`M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z`}
-          ></path>
-        </svg>
+    {work.images && work.images.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {work.images.map((image, index) => (
+          <div class="backdrop-blur-sm bg-white/5 border border-white/10 rounded-sm overflow-hidden">
+            <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+              <div class={`w-full h-full ${work.color} flex items-center justify-center`}>
+                {/* Astroの画像最適化機能を使用 */}
+                <div class="relative w-full h-full flex items-center justify-center">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-24 h-24 text-white/30"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d={`M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z`}
+                      ></path>
+                    </svg>
+                  </div>
+                  <img 
+                    src={image.url} 
+                    alt={image.alt} 
+                    class="w-full h-full object-cover"
+                    width={800}
+                    height={450}
+                    loading="lazy"
+                    decoding="async"
+                    onload="this.previousElementSibling.style.display='none'"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <p class="text-white text-sm font-medium mb-1">{image.alt}</p>
+              <p class="text-gray-400 text-xs">{image.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    ) : (
+      <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-sm mb-6">
+        <div class={`w-full h-full ${work.color} flex items-center justify-center`}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-24 h-24 text-white/30"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+              d={`M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z`}
+            ></path>
+          </svg>
+        </div>
+      </div>
+    )}
     
-    <p class="text-gray-400 text-center text-sm">
+    <p class="text-gray-400 text-center text-sm mt-4">
       ※ 実際のプロジェクト画像はクライアント様の許可を得て掲載しています
     </p>
   </div>
@@ -228,22 +238,53 @@ const relatedWorks = portfolioData.works
               <div class="aspect-w-16 aspect-h-12 overflow-hidden">
                 <div class={`w-full h-full ${relatedWork.color} group-hover:scale-105 transition-transform duration-500`}>
                 </div>
-                <!-- プレースホルダー画像 -->
+                <!-- メイン画像またはプレースホルダー -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-12 h-12 text-white/30"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1"
-                      d={`M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z`}
-                    ></path>
-                  </svg>
+                  {hasValidImage(relatedWork) ? (
+                    <div class="relative w-full h-full">
+                      <img 
+                        src={relatedWork.images[0].url} 
+                        alt={relatedWork.images[0].alt || relatedWork.title} 
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                        width={600}
+                        height={450}
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                      />
+                      <div class="absolute inset-0 items-center justify-center hidden">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="w-12 h-12 text-white/30"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-12 h-12 text-white/30"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                      ></path>
+                    </svg>
+                  )}
                 </div>
                 <!-- オーバーレイ -->
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50">
