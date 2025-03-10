@@ -1,0 +1,219 @@
+---
+import Header from "../components/Header.astro";
+import Cta from "../components/Cta.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="プライバシーポリシー | WebChaleur - 帯広・十勝のWeb制作会社">
+  <Header />
+  <!-- ヒーローセクション -->
+  <section
+    class="pt-32 pb-20 bg-gradient-to-b from-gray-900 to-indigo-900/80 overflow-hidden"
+  >
+    <div class="container px-6 mx-auto">
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="inline-block px-3 py-1 mb-2 text-xs tracking-wider text-indigo-300 uppercase bg-indigo-900/50 backdrop-blur-sm border border-indigo-800 rounded-sm"
+        >
+          PRIVACY POLICY
+        </div>
+        <h1 class="text-3xl md:text-4xl font-light text-white mb-6">
+          プライバシーポリシー
+        </h1>
+        <p
+          class="text-gray-300 font-light leading-relaxed text-lg max-w-2xl mx-auto"
+        >
+          WebChaleur（以下「当サイト」）は、お客様のプライバシーを尊重し、個人情報の保護に努めています。
+          本ポリシーでは、当サイトが収集する情報とその利用方法について説明します。
+        </p>
+      </div>
+    </div>
+
+    <!-- 装飾的な波形 -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+      <svg
+        class="absolute bottom-0 left-0 w-full"
+        height="40"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 40"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#0F172A"
+          d="M0,15 L48,13 C96,11,192,7,288,9 C384,11,480,19,576,22 C672,25,768,23,864,19 C960,15,1056,9,1152,9 C1248,9,1344,15,1392,18 L1440,21 L1440,40 L1392,40 C1344,40,1248,40,1152,40 C1056,40,960,40,864,40 C768,40,672,40,576,40 C480,40,384,40,288,40 C192,40,96,40,48,40 L0,40 Z"
+        >
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- プライバシーポリシーコンテンツ -->
+  <section class="py-20 bg-gray-950">
+    <div class="container px-6 mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-12">
+          <!-- 個人情報の収集 -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">
+              1. 個人情報の収集
+            </h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                当サイトでは、以下の場合に個人情報を収集することがあります：
+              </p>
+              <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                <li>お問い合わせフォームからのご連絡</li>
+                <li>サービスのお申し込み</li>
+                <li>メールマガジンの購読</li>
+              </ul>
+              <p class="text-gray-300 mt-4">
+                収集する情報には、お名前、メールアドレス、電話番号、会社名などが含まれます。
+              </p>
+            </div>
+          </div>
+
+          <!-- 個人情報の利用目的 -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">
+              2. 個人情報の利用目的
+            </h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                当サイトが収集した個人情報は、以下の目的で利用します：
+              </p>
+              <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                <li>お問い合わせへの回答</li>
+                <li>サービス提供のための連絡</li>
+                <li>サービス改善のための分析</li>
+                <li>新サービスや更新情報のご案内</li>
+              </ul>
+              <p class="text-gray-300 mt-4">
+                上記の目的以外で個人情報を利用する場合は、あらかじめご本人の同意を得るものとします。
+              </p>
+            </div>
+          </div>
+
+          <!-- 個人情報の第三者提供 -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">
+              3. 個人情報の第三者提供
+            </h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                当サイトは、以下の場合を除き、収集した個人情報を第三者に提供することはありません：
+              </p>
+              <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                <li>ご本人の同意がある場合</li>
+                <li>法令に基づく場合</li>
+                <li>
+                  人の生命、身体または財産の保護のために必要がある場合であって、ご本人の同意を得ることが困難である場合
+                </li>
+                <li>
+                  公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、ご本人の同意を得ることが困難である場合
+                </li>
+                <li>
+                  国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、ご本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cookieの使用 -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">4. Cookieの使用</h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                当サイトでは、サイトの利便性向上のためにCookieを使用しています。Cookieとは、ウェブサイトがお客様のコンピュータに保存する小さなテキストファイルです。
+              </p>
+              <p class="text-gray-300 mb-4">
+                当サイトでは、以下の目的でCookieを使用しています：
+              </p>
+              <ul class="list-disc ml-6 text-gray-300 space-y-2">
+                <li>ウェブサイトの利用状況の分析</li>
+                <li>ユーザー体験の向上</li>
+                <li>広告の最適化</li>
+              </ul>
+              <p class="text-gray-300 mt-4">
+                お客様はブラウザの設定によりCookieの受け入れを拒否することができますが、その場合、当サイトの一部の機能が正常に動作しない可能性があります。
+              </p>
+            </div>
+          </div>
+
+          <!-- アクセス解析ツール -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">
+              5. アクセス解析ツール
+            </h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                当サイトでは、Google
+                Analyticsを利用してアクセス情報を収集しています。Google
+                Analyticsは、Cookieを使用してデータを収集します。このデータは匿名で収集されており、個人を特定するものではありません。
+              </p>
+              <p class="text-gray-300 mb-4">
+                Google
+                Analyticsの利用により収集されるデータや、その処理の詳細については、Google
+                Analyticsのプライバシーポリシーをご確認ください。
+              </p>
+              <p class="text-gray-300">
+                また、Google
+                Analyticsによるデータの収集を拒否する場合は、Google提供のオプトアウトアドオンをインストールすることで収集を拒否できます。
+              </p>
+            </div>
+          </div>
+
+          <!-- 個人情報の安全管理 -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">
+              6. 個人情報の安全管理
+            </h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                当サイトは、収集した個人情報の漏洩、紛失、改ざんなどを防ぐために、適切なセキュリティ対策を講じています。
+              </p>
+              <p class="text-gray-300">
+                ただし、インターネット上での通信は完全に安全ではないため、情報の送信は自己責任で行ってください。
+              </p>
+            </div>
+          </div>
+
+          <!-- お問い合わせ先 -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">
+              7. お問い合わせ先
+            </h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                本プライバシーポリシーに関するお問い合わせは、以下の連絡先までお願いします：
+              </p>
+              <p class="text-gray-300">
+                <span class="text-indigo-400">メールアドレス：</span>
+                webchaleur@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <!-- プライバシーポリシーの変更 -->
+          <div>
+            <h2 class="text-2xl font-light mb-4 text-white">
+              8. プライバシーポリシーの変更
+            </h2>
+            <div class="bg-gray-900 p-6 rounded-sm border border-gray-800">
+              <p class="text-gray-300 mb-4">
+                当サイトは、必要に応じて本プライバシーポリシーを変更することがあります。変更した場合は、当サイト上で告知します。
+              </p>
+              <p class="text-gray-300">最終更新日：2023年12月1日</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-900">
+    <Cta />
+  </section>
+  <Footer />
+</BaseLayout>
+
