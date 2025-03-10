@@ -42,8 +42,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div
@@ -77,8 +76,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div
@@ -86,7 +84,7 @@
           >
             <div class="p-6 text-gray-300">
               <p>
-                料金はプロジェクトの規模や要件によって異なります。Webサイト制作は30万円〜、ECサイト制作は50万円〜、Webマーケティングは月額10万円〜、SNS運用サポートは月額5万円〜が目安です。まずはご相談いただき、お見積りをご提案させていただきます。
+                料金はプロジェクトの規模や要件によって異なります。Webサイト制作は20万円〜、ECサイト制作は30万円〜、Webマーケティングは月額10万円〜、SNS運用サポートは月額5万円〜が目安です。まずはご相談いただき、お見積りをご提案させていただきます。
               </p>
             </div>
           </div>
@@ -112,8 +110,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div
@@ -147,8 +144,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div
@@ -205,8 +201,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div
@@ -240,8 +235,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+                d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div
@@ -277,8 +271,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </a>
       </div>
@@ -298,12 +291,12 @@
       question.addEventListener("click", () => {
         // 現在のアイテムの状態を切り替える
         const isExpanded = question.getAttribute("aria-expanded") === "true";
-        
+
         // 全てのFAQを閉じる
         faqItems.forEach((otherItem) => {
           const otherQuestion = otherItem.querySelector(".faq-question");
           const otherAnswer = otherItem.querySelector(".faq-answer");
-          
+
           otherQuestion.setAttribute("aria-expanded", "false");
           otherAnswer.style.maxHeight = "0";
           otherItem.classList.remove("active");
