@@ -1,0 +1,107 @@
+{
+  "default": {
+    "title": "WebChaleur | 高品質な暖房ソリューション",
+    "description": "WebChaleurは、エネルギー効率の高い暖房ソリューションを提供する専門企業です。持続可能で快適な暖房システムをご提案します。",
+    "keywords": "暖房, エネルギー効率, 持続可能, 快適, 暖房システム, WebChaleur",
+    "author": "WebChaleur Team",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "charset": "UTF-8",
+    "language": "ja",
+    "robots": "index, follow",
+    "canonical": "https://www.webchaleur.com"
+  },
+  "pages": {
+    "home": {
+      "title": "WebChaleur | ホーム | 高品質な暖房ソリューション",
+      "description": "WebChaleurへようこそ。エネルギー効率の高い暖房ソリューションで、快適な生活空間を実現します。",
+      "keywords": "ホーム, 暖房, エネルギー効率, 持続可能, 快適, 暖房システム",
+      "og": {
+        "title": "WebChaleur | 高品質な暖房ソリューション",
+        "description": "エネルギー効率の高い暖房ソリューションで、快適な生活空間を実現します。",
+        "image": "https://www.webchaleur.com/images/home-og.jpg",
+        "url": "https://www.webchaleur.com"
+      }
+    },
+    "about": {
+      "title": "WebChaleur | 会社概要 | 私たちについて",
+      "description": "WebChaleurの会社概要。私たちのビジョン、ミッション、そして暖房業界での取り組みについてご紹介します。",
+      "keywords": "会社概要, 暖房会社, ビジョン, ミッション, 持続可能性",
+      "og": {
+        "title": "WebChaleur | 会社概要",
+        "description": "私たちのビジョン、ミッション、そして暖房業界での取り組みについてご紹介します。",
+        "image": "https://www.webchaleur.com/images/about-og.jpg",
+        "url": "https://www.webchaleur.com/about"
+      }
+    },
+    "products": {
+      "title": "WebChaleur | 製品一覧 | 暖房ソリューション",
+      "description": "WebChaleurが提供する高品質な暖房製品とソリューションをご覧ください。あらゆるニーズに対応した製品ラインナップ。",
+      "keywords": "暖房製品, 暖房ソリューション, エネルギー効率, 製品一覧",
+      "og": {
+        "title": "WebChaleur | 製品一覧",
+        "description": "高品質な暖房製品とソリューションをご覧ください。",
+        "image": "https://www.webchaleur.com/images/products-og.jpg",
+        "url": "https://www.webchaleur.com/products"
+      }
+    },
+    "contact": {
+      "title": "WebChaleur | お問い合わせ | サポート",
+      "description": "WebChaleurへのお問い合わせ。製品に関するご質問やサポートについてお気軽にご連絡ください。",
+      "keywords": "お問い合わせ, サポート, カスタマーサービス, 連絡先",
+      "og": {
+        "title": "WebChaleur | お問い合わせ",
+        "description": "製品に関するご質問やサポートについてお気軽にご連絡ください。",
+        "image": "https://www.webchaleur.com/images/contact-og.jpg",
+        "url": "https://www.webchaleur.com/contact"
+      }
+    }
+  },
+  "social": {
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@WebChaleur",
+      "creator": "@WebChaleur"
+    },
+    "facebook": {
+      "appId": "123456789012345"
+    }
+  },
+  "structured_data": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WebChaleur",
+      "url": "https://www.webchaleur.com",
+      "logo": "https://www.webchaleur.com/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+81-3-1234-5678",
+        "contactType": "customer service",
+        "availableLanguage": ["Japanese", "English"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/webchaleur",
+        "https://www.twitter.com/webchaleur",
+        "https://www.instagram.com/webchaleur",
+        "https://www.linkedin.com/company/webchaleur"
+      ]
+    },
+    "product": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "エコヒーター Pro",
+      "image": "https://www.webchaleur.com/images/products/eco-heater-pro.jpg",
+      "description": "エネルギー効率の高い最新の暖房システム。消費電力を抑えながら快適な暖かさを提供します。",
+      "brand": {
+        "@type": "Brand",
+        "name": "WebChaleur"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "JPY",
+        "price": "29800",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  }
+}

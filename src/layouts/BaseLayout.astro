@@ -1,15 +1,67 @@
 ---
 import "../styles/global.css";
+import seoJson from "../data/seo.json";
+
+const { title, pageName = "home" } = Astro.props;
+
+// ページ固有のSEOデータを取得
+const defaultSeo = seoJson.default;
+const pageSeo = seoJson.pages[pageName] || {};
+const socialData = seoJson.social;
+
+// 使用するタイトルを決定（propsから渡されたものか、ページ固有のものか、デフォルトのもの）
+const pageTitle = title || pageSeo.title || defaultSeo.title;
+const pageDescription = pageSeo.description || defaultSeo.description;
+const pageKeywords = pageSeo.keywords || defaultSeo.keywords;
+const canonical = pageSeo.og?.url || defaultSeo.canonical;
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang={defaultSeo.language}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset={defaultSeo.charset} />
+    <meta name="viewport" content={defaultSeo.viewport} />
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={pageKeywords} />
+    <meta name="author" content={defaultSeo.author} />
+    <meta name="robots" content={defaultSeo.robots} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    
+    <!-- Open Graph タグ -->
+    {pageSeo.og && (
+      <>
+        <meta property="og:title" content={pageSeo.og.title} />
+        <meta property="og:description" content={pageSeo.og.description} />
+        <meta property="og:image" content={pageSeo.og.image} />
+        <meta property="og:url" content={pageSeo.og.url} />
+        <meta property="og:type" content="website" />
+      </>
+    )}
+    
+    <!-- Twitter Card タグ -->
+    {socialData.twitter && (
+      <>
+        <meta name="twitter:card" content={socialData.twitter.card} />
+        <meta name="twitter:site" content={socialData.twitter.site} />
+        <meta name="twitter:creator" content={socialData.twitter.creator} />
+      </>
+    )}
+
+    <!-- Facebook タグ -->
+    {socialData.facebook && (
+      <meta property="fb:app_id" content={socialData.facebook.appId} />
+    )}
+    
+    <!-- 構造化データ -->
+    {seoJson.structured_data && (
+      <script type="application/ld+json">
+        {JSON.stringify(seoJson.structured_data)}
+      </script>
+    )}
+    
+    <title>{pageTitle}</title>
   </head>
   <body>
     <slot />

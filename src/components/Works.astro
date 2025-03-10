@@ -205,30 +205,6 @@ function hasValidImage(work: any): boolean {
         </svg>
       </a>
     </div>
-
-    <!-- 高品質表示切り替えボタン -->
-    <div class="flex justify-center mt-8">
-      <button
-        id="toggle-quality"
-        class="px-4 py-2 bg-indigo-600 text-white rounded-sm hover:bg-indigo-700 transition-colors text-sm flex items-center"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4 mr-2"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          ></path>
-        </svg>
-        <span id="quality-text">高品質表示をONにする</span>
-      </button>
-    </div>
   </div>
 </section>
 
@@ -304,39 +280,5 @@ function hasValidImage(work: any): boolean {
         });
       });
     });
-
-    // 高品質表示切り替え
-    const toggleQualityBtn = document.getElementById("toggle-quality");
-    const qualityText = document.getElementById("quality-text");
-    let highQuality = false;
-
-    if (toggleQualityBtn) {
-      toggleQualityBtn.addEventListener("click", function () {
-        highQuality = !highQuality;
-        
-        // テキストを更新
-        qualityText.textContent = highQuality 
-          ? "高品質表示をOFFにする" 
-          : "高品質表示をONにする";
-        
-        // 画像の切り替え
-        const projectItems = document.querySelectorAll(".project-item");
-        projectItems.forEach((item) => {
-          const img = item.querySelector("img");
-          const lowQualitySrc = img.getAttribute("data-low-quality");
-          const highQualitySrc = img.getAttribute("data-high-quality");
-          
-          if (highQuality) {
-            img.src = highQualitySrc;
-            toggleQualityBtn.classList.remove("bg-indigo-600");
-            toggleQualityBtn.classList.add("bg-gray-600");
-          } else {
-            img.src = lowQualitySrc;
-            toggleQualityBtn.classList.remove("bg-gray-600");
-            toggleQualityBtn.classList.add("bg-indigo-600");
-          }
-        });
-      });
-    }
   });
 </script>
