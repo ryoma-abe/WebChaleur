@@ -164,11 +164,7 @@ function hasValidImage(work: any): boolean {
                           ? 'ECサイト' 
                           : work.category.includes('corporate')
                             ? 'コーポレートサイト'
-                            : work.category.includes('lp')
-                              ? 'LP'
-                              : work.category.includes('web-app')
-                                ? 'Webアプリ'
-                                : 'その他'}
+                            : 'その他'}
                     </span>
                     <span class="text-gray-400 text-xs">{work.year}年</span>
                   </div>

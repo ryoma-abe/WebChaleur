@@ -126,7 +126,7 @@
     {
       "id": "awa-honey",
       "title": "awaはちみつ様ランディングページ",
-      "category": ["lp"],
+      "category": ["other"],
       "year": "2022",
       "description": "泡状はちみつ製品のランディングページ。コーディングとディレクションを担当。",
       "color": "from-yellow-400/80 to-amber-300/80",
@@ -197,8 +197,8 @@
       "label": "コーポレートサイト"
     },
     {
-      "id": "lp",
-      "label": "LP"
+      "id": "other",
+      "label": "その他"
     }
   ]
 }
