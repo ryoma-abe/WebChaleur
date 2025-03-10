@@ -17,23 +17,6 @@ export async function getStaticPaths() {
 
 const { work } = Astro.props;
 
-// カテゴリに基づいて使用技術を取得
-function getTechnologies(categories) {
-  const techMap = {
-    'ec': ['Shopify', 'WooCommerce', 'カスタムECシステム'],
-    'corporate': ['WordPress', 'Astro', 'Next.js']
-  };
-  
-  let technologies = [];
-  categories.forEach(category => {
-    if (techMap[category]) {
-      technologies = [...technologies, ...techMap[category]];
-    }
-  });
-  
-  return technologies.slice(0, 2); // 最大2つまで表示
-}
-
 // 画像が存在するかチェックする関数
 function hasValidImage(work: any): boolean {
   return work.images && 
@@ -41,9 +24,6 @@ function hasValidImage(work: any): boolean {
          work.images.length > 0 && 
          work.images[0].url;
 }
-
-// 使用した主な技術
-const technologies = getTechnologies(work.category);
 
 // 関連する他の作品を取得 (同じカテゴリから最大2つ)
 const relatedWorks = portfolioData.works
@@ -76,14 +56,37 @@ const relatedWorks = portfolioData.works
             {work.fullDescription || `${work.description} このプロジェクトでは、クライアントの要望に合わせた最適なソリューションを提供しました。ユーザビリティを重視したデザインと機能性の両立を目指し、モダンな技術スタックを活用しています。`}
           </p>
           
-          <h4 class="text-white font-medium mb-3">使用技術</h4>
-          <div class="flex flex-wrap gap-2 mb-6">
-            {technologies.map(tech => (
-              <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 text-xs rounded-sm border border-indigo-800">
-                {tech}
-              </span>
-            ))}
-          </div>
+          {/* プロジェクトURLがある場合は表示 */}
+          {work.projectUrl && (
+            <div class="mb-6">
+              <h4 class="text-white font-medium mb-3">プロジェクトURL</h4>
+              <a 
+                href={work.projectUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center px-4 py-2 bg-indigo-900/50 text-indigo-300 text-sm rounded-sm border border-indigo-800 hover:bg-indigo-800/50 transition-colors"
+              >
+                <span>{work.projectUrl}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          )}
+          
+          {/* 使用技術がある場合は表示 */}
+          {work.technologies && work.technologies.length > 0 && (
+            <div class="mb-6">
+              <h4 class="text-white font-medium mb-3">使用技術</h4>
+              <div class="flex flex-wrap gap-2">
+                {work.technologies.map(tech => (
+                  <span class="px-3 py-1 bg-indigo-900/50 text-indigo-300 text-xs rounded-sm border border-indigo-800">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
       
@@ -204,26 +207,28 @@ const relatedWorks = portfolioData.works
     </p>
   </div>
   
-  <!-- クライアントの声 -->
-  <div class="mb-16">
-    <h2 class="text-2xl font-light text-white mb-8">クライアントの声</h2>
-    
-    <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-sm">
-      <div class="flex items-start">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-400 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-        </svg>
-        <div>
-          <p class="text-gray-300 italic mb-4">
-            {work.testimonial || "「スピーディーな対応と、ニーズを的確に捉えたデザイン提案に感謝しています。リニューアル後は問い合わせ数が増え、ビジネスの成長に大きく貢献しています。」"}
-          </p>
-          <p class="text-indigo-400">
-            {work.clientName || "- 担当者様"}
-          </p>
+  <!-- クライアントの声 - testimonialが存在する場合のみ表示 -->
+  {(work.testimonial || work.clientName) && (
+    <div class="mb-16">
+      <h2 class="text-2xl font-light text-white mb-8">クライアントの声</h2>
+      
+      <div class="backdrop-blur-sm bg-white/5 border border-white/10 p-8 rounded-sm">
+        <div class="flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-400 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
+          <div>
+            <p class="text-gray-300 italic mb-4">
+              {work.testimonial || "「スピーディーな対応と、ニーズを的確に捉えたデザイン提案に感謝しています。リニューアル後は問い合わせ数が増え、ビジネスの成長に大きく貢献しています。」"}
+            </p>
+            <p class="text-indigo-400">
+              {work.clientName || "- 担当者様"}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  )}
   
   <!-- 関連作品 -->
   {relatedWorks.length > 0 && (
