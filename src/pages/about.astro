@@ -1,0 +1,400 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="会社概要 | WebChaleur - 帯広・十勝のWeb制作会社">
+  <!-- ヒーローセクション -->
+  <section
+    class="pt-32 pb-20 bg-gradient-to-b from-gray-900 to-indigo-900/80 overflow-hidden"
+  >
+    <div class="container px-6 mx-auto">
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="inline-block px-3 py-1 mb-2 text-xs tracking-wider text-indigo-300 uppercase bg-indigo-900/50 backdrop-blur-sm border border-indigo-800 rounded-sm"
+        >
+          ABOUT US
+        </div>
+        <h1 class="text-3xl md:text-4xl font-light text-white mb-6">
+          会社概要
+        </h1>
+        <p
+          class="text-gray-300 font-light leading-relaxed text-lg max-w-2xl mx-auto"
+        >
+          帯広・十勝エリアを拠点に、成果の出るWebサイト制作を提供しています。
+          ホームページ制作からECサイト構築、SEO対策まで、お客様のビジネスに最適なWeb戦略をご提案します。
+        </p>
+      </div>
+    </div>
+
+    <!-- 装飾的な波形 -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+      <svg
+        class="absolute bottom-0 left-0 w-full"
+        height="40"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 40"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#0F172A"
+          d="M0,15 L48,13 C96,11,192,7,288,9 C384,11,480,19,576,22 C672,25,768,23,864,19 C960,15,1056,9,1152,9 C1248,9,1344,15,1392,18 L1440,21 L1440,40 L1392,40 C1344,40,1248,40,1152,40 C1056,40,960,40,864,40 C768,40,672,40,576,40 C480,40,384,40,288,40 C192,40,96,40,48,40 L0,40 Z"
+        >
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 会社情報セクション -->
+  <section class="py-20 bg-gray-950">
+    <div class="container px-6 mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-light mb-8 text-white text-center">
+          基本情報
+        </h2>
+        <div
+          class="bg-gray-900 shadow-md rounded-sm overflow-hidden border border-gray-800"
+        >
+          <table class="w-full border-collapse">
+            <tbody>
+              <tr class="border-b border-gray-800">
+                <th
+                  class="text-left py-4 px-6 bg-gray-900/50 font-medium text-gray-300 w-1/3"
+                >
+                  屋号
+                </th>
+                <td class="py-4 px-6 text-gray-300">WebChaleur</td>
+              </tr>
+              <tr class="border-b border-gray-800">
+                <th
+                  class="text-left py-4 px-6 bg-gray-900/50 font-medium text-gray-300"
+                >
+                  設立
+                </th>
+                <td class="py-4 px-6 text-gray-300">2020年4月</td>
+              </tr>
+              <tr class="border-b border-gray-800">
+                <th
+                  class="text-left py-4 px-6 bg-gray-900/50 font-medium text-gray-300"
+                >
+                  代表
+                </th>
+                <td class="py-4 px-6 text-gray-300">山田 太郎</td>
+              </tr>
+              <tr class="border-b border-gray-800">
+                <th
+                  class="text-left py-4 px-6 bg-gray-900/50 font-medium text-gray-300"
+                >
+                  所在地
+                </th>
+                <td class="py-4 px-6 text-gray-300">
+                  〒080-0000 北海道帯広市西X条南X丁目
+                </td>
+              </tr>
+              <tr class="border-b border-gray-800">
+                <th
+                  class="text-left py-4 px-6 bg-gray-900/50 font-medium text-gray-300"
+                >
+                  電話番号
+                </th>
+                <td class="py-4 px-6 text-gray-300">0155-00-0000</td>
+              </tr>
+              <tr class="border-b border-gray-800">
+                <th
+                  class="text-left py-4 px-6 bg-gray-900/50 font-medium text-gray-300"
+                >
+                  メールアドレス
+                </th>
+                <td class="py-4 px-6 text-gray-300">info@webchaleur.com</td>
+              </tr>
+              <tr class="border-b border-gray-800">
+                <th
+                  class="text-left py-4 px-6 bg-gray-900/50 font-medium text-gray-300"
+                >
+                  事業内容
+                </th>
+                <td class="py-4 px-6 text-gray-300">
+                  <ul class="list-disc ml-5 space-y-1">
+                    <li>Webサイト企画・制作</li>
+                    <li>ECサイト構築・運用支援</li>
+                    <li>SEO対策・マーケティング支援</li>
+                    <li>Webコンサルティング</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ミッション・ビジョンセクション -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl font-light mb-4 text-white">
+            ミッション・ビジョン
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            私たちは地域のビジネスをデジタルの力でサポートし、
+            北海道の魅力を世界に発信することを目指しています。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-800 p-8 rounded-sm shadow-md border border-gray-700"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-10 h-10 bg-indigo-900/50 rounded-sm flex items-center justify-center mr-4 border border-indigo-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-light text-white">ミッション</h3>
+            </div>
+            <p class="text-gray-400">
+              地域企業のデジタル化を支援し、北海道の経済発展に貢献する。私たちは技術とデザインの力で、お客様のビジネスの成長を促進します。
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-800 p-8 rounded-sm shadow-md border border-gray-700"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-10 h-10 bg-indigo-900/50 rounded-sm flex items-center justify-center mr-4 border border-indigo-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-indigo-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-light text-white">ビジョン</h3>
+            </div>
+            <p class="text-gray-400">
+              北海道を代表するWeb制作会社として、地域の魅力を最新のデジタル技術で世界に発信する。常に革新的なソリューションを提供し続けることで、お客様と共に成長します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 私たちの強みセクション -->
+  <section class="py-20 bg-gray-950">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-light mb-12 text-white text-center">
+          私たちの強み
+        </h2>
+
+        <div class="space-y-8">
+          <div class="flex flex-col md:flex-row items-start gap-6">
+            <div
+              class="w-16 h-16 bg-indigo-900/50 rounded-sm flex items-center justify-center flex-shrink-0 md:mt-2 border border-indigo-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-indigo-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-light mb-2 text-white">
+                地域に根ざしたサービス
+              </h3>
+              <p class="text-gray-400">
+                帯広・十勝エリアを拠点とし、地域の特性や文化を深く理解しています。お客様のビジネスに合わせた最適なWeb戦略を提案します。
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-6">
+            <div
+              class="w-16 h-16 bg-indigo-900/50 rounded-sm flex items-center justify-center flex-shrink-0 md:mt-2 border border-indigo-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-indigo-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-light mb-2 text-white">最新技術の活用</h3>
+              <p class="text-gray-400">
+                常に最新のWeb技術とトレンドを取り入れ、高品質で効果的なWebサイトを制作します。モバイルファーストのレスポンシブデザインを標準としています。
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-6">
+            <div
+              class="w-16 h-16 bg-indigo-900/50 rounded-sm flex items-center justify-center flex-shrink-0 md:mt-2 border border-indigo-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-indigo-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-light mb-2 text-white">
+                丁寧なコミュニケーション
+              </h3>
+              <p class="text-gray-400">
+                プロジェクトの進行状況を常に共有し、お客様のご要望に柔軟に対応します。制作後のサポートも充実しており、長期的なパートナーシップを大切にしています。
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-start gap-6">
+            <div
+              class="w-16 h-16 bg-indigo-900/50 rounded-sm flex items-center justify-center flex-shrink-0 md:mt-2 border border-indigo-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-indigo-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-light mb-2 text-white">
+                成果にこだわる制作
+              </h3>
+              <p class="text-gray-400">
+                見た目の美しさだけでなく、ビジネス目標の達成を重視したWebサイト制作を行います。SEO対策やユーザビリティを考慮し、成果につながるサイトを構築します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- チームメンバーセクション -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-light mb-12 text-white text-center">
+          運営者情報
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- メンバー1 -->
+          <div
+            class="bg-gray-800 rounded-sm overflow-hidden shadow-md border border-gray-700 md:col-start-2"
+          >
+            <div class="p-6">
+              <div class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4">
+              </div>
+              <h3 class="text-xl font-light text-center text-white mb-1">
+                山田 太郎
+              </h3>
+              <p class="text-indigo-400 text-center text-sm mb-3">
+                フリーランス Web制作者
+              </p>
+              <p class="text-gray-400 text-sm">
+                十勝出身。大手Web制作会社での経験を活かし、2020年にWebChaleurを設立。地域企業のデジタル化を支援している。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせCTA -->
+  <section class="py-16 bg-indigo-900/80 text-white border-t border-indigo-800">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-2xl font-light mb-4">お問い合わせ</h2>
+      <p class="max-w-2xl mx-auto mb-8 text-gray-300">
+        Webサイト制作やデジタルマーケティングについてのご相談は、お気軽にお問い合わせください。
+        初回相談は無料で承っております。
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-light rounded-sm hover:bg-indigo-700 transition-colors border border-indigo-500"
+      >
+        <span>お問い合わせはこちら</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 ml-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

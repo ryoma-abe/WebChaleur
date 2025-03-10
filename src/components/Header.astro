@@ -21,27 +21,18 @@
     </div>
   </a>
   <nav class="hidden md:flex items-center space-x-8">
-    <a
-      href="/"
-      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
-    >
-      トップ
+    <a href="/" class="text-white hover:text-indigo-300 transition-colors">
+      ホーム
     </a>
-    <a
-      href="#services"
-      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
-    >
-      サービス
+    <a href="/about" class="text-white hover:text-indigo-300 transition-colors">
+      会社概要
     </a>
-    <a
-      href="#works"
-      class="text-gray-300 hover:text-white transition-colors text-sm tracking-wider"
-    >
-      実績
+    <a href="/works" class="text-white hover:text-indigo-300 transition-colors">
+      制作実績
     </a>
     <a
       href="/contact"
-      class="px-5 py-2 text-xs font-medium tracking-wider text-white uppercase transition-all border border-indigo-500 rounded-sm hover:bg-indigo-700"
+      class="text-white hover:text-indigo-300 transition-colors"
     >
       お問い合わせ
     </a>
@@ -61,76 +52,50 @@
 
 <!-- モバイルメニュー -->
 <div
-  class="fixed inset-0 z-40 flex-col items-center justify-center space-y-8 backdrop-blur-lg bg-gray-900/95 md:hidden opacity-0 pointer-events-none transition-all duration-500 transform translate-y-8"
   id="mobile-menu"
+  class="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex flex-col justify-center items-center transform transition-transform duration-300 translate-x-full"
 >
-  <div class="flex flex-col items-center justify-center h-full w-full">
-    <div class="flex flex-col items-center space-y-8 py-10">
-      <a
-        href="/"
-        class="mobile-menu-item text-2xl font-light tracking-wider text-white relative overflow-hidden group"
-      >
-        <span
-          class="block transition-transform duration-500 group-hover:-translate-y-full"
-          >トップ</span
-        >
-        <span
-          class="absolute top-0 left-0 w-full transform translate-y-full transition-transform duration-500 text-indigo-400 group-hover:translate-y-0"
-          >トップ</span
-        >
-      </a>
-      <a
-        href="#services"
-        class="mobile-menu-item text-2xl font-light tracking-wider text-white relative overflow-hidden group"
-      >
-        <span
-          class="block transition-transform duration-500 group-hover:-translate-y-full"
-          >サービス</span
-        >
-        <span
-          class="absolute top-0 left-0 w-full transform translate-y-full transition-transform duration-500 text-indigo-400 group-hover:translate-y-0"
-          >サービス</span
-        >
-      </a>
-      <a
-        href="#works"
-        class="mobile-menu-item text-2xl font-light tracking-wider text-white relative overflow-hidden group"
-      >
-        <span
-          class="block transition-transform duration-500 group-hover:-translate-y-full"
-          >実績</span
-        >
-        <span
-          class="absolute top-0 left-0 w-full transform translate-y-full transition-transform duration-500 text-indigo-400 group-hover:translate-y-0"
-          >実績</span
-        >
-      </a>
-      <a
-        href="#about"
-        class="mobile-menu-item text-2xl font-light tracking-wider text-white relative overflow-hidden group"
-      >
-        <span
-          class="block transition-transform duration-500 group-hover:-translate-y-full"
-          >十勝の強み</span
-        >
-        <span
-          class="absolute top-0 left-0 w-full transform translate-y-full transition-transform duration-500 text-indigo-400 group-hover:translate-y-0"
-          >十勝の強み</span
-        >
-      </a>
-      <div class="pt-8">
-        <a
-          href="#contact"
-          class="px-8 py-3 text-sm font-medium tracking-wider text-white uppercase border border-indigo-500 hover:bg-indigo-700 transition-all duration-300 relative overflow-hidden group"
-        >
-          <span class="relative z-10">お問い合わせ</span>
-          <span
-            class="absolute inset-0 bg-indigo-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
-          ></span>
-        </a>
-      </div>
-    </div>
-  </div>
+  <button
+    id="close-menu"
+    class="absolute top-6 right-6 text-white hover:text-indigo-400"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-8 w-8"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <nav class="flex flex-col space-y-6 text-center">
+    <a
+      href="/"
+      class="text-2xl text-white hover:text-indigo-400 transition-colors"
+      >ホーム</a
+    >
+    <a
+      href="/about"
+      class="text-2xl text-white hover:text-indigo-400 transition-colors"
+      >会社概要</a
+    >
+    <a
+      href="/works"
+      class="text-2xl text-white hover:text-indigo-400 transition-colors"
+      >制作実績</a
+    >
+    <a
+      href="/contact"
+      class="text-2xl text-white hover:text-indigo-400 transition-colors"
+      >お問い合わせ</a
+    >
+  </nav>
 </div>
 
 <style>
