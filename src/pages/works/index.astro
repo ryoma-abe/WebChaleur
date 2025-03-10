@@ -1,0 +1,270 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import portfolioData from '../../data/portfolio-data.json';
+import { Image } from 'astro:assets';
+
+const { works, filters } = portfolioData;
+
+// Function to get the icon SVG path based on the icon name
+function getIconPath(iconName: string): string {
+  const icons: Record<string, string> = {
+    "shopping-bag": "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
+    "home": "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+    "cube": "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+    "shopping-cart": "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+    "beaker": "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
+    "paint-brush": "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01",
+    "users": "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+  };
+  
+  return icons[iconName] || icons["cube"]; // Default to cube if icon not found
+}
+
+// 画像が存在するかチェックする関数
+function hasValidImage(work: any): boolean {
+  return work.images && 
+         Array.isArray(work.images) && 
+         work.images.length > 0 && 
+         work.images[0].url;
+}
+---
+
+<BaseLayout title="制作実績一覧 | WebChaleur">
+  <Header />
+
+  <!-- ヒーローセクション -->
+  <section class="pt-32 pb-20 bg-gradient-to-b from-gray-900 to-indigo-900/80 overflow-hidden">
+    <div class="container px-6 mx-auto">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block px-3 py-1 mb-4 text-xs tracking-wider text-indigo-300 uppercase bg-indigo-900/50 backdrop-blur-sm border border-indigo-800 rounded-sm">
+          制作実績
+        </div>
+        <h1 class="text-3xl md:text-4xl font-light text-white mb-4">
+          多様な業界での<br /><span class="text-indigo-400">実績一覧</span>
+        </h1>
+        <p class="text-gray-300 font-light leading-relaxed max-w-2xl mx-auto">
+          WebChaleurが手がけた様々なプロジェクトをご紹介します。ECサイト、コーポレートサイト、LP、Webアプリなど、多様なジャンルでの制作実績をご覧ください。
+        </p>
+      </div>
+    </div>
+
+    <!-- 装飾的な波形 -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+      <svg
+        class="absolute bottom-0 left-0 w-full"
+        height="40"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 40"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#0F172A"
+          d="M0,15 L48,13 C96,11,192,7,288,9 C384,11,480,19,576,22 C672,25,768,23,864,19 C960,15,1056,9,1152,9 C1248,9,1344,15,1392,18 L1440,21 L1440,40 L1392,40 C1344,40,1248,40,1152,40 C1056,40,960,40,864,40 C768,40,672,40,576,40 C480,40,384,40,288,40 C192,40,96,40,48,40 L0,40 Z"
+        >
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 実績一覧セクション -->
+  <section class="py-20 bg-gray-950">
+    <div class="container px-6 mx-auto">
+      <!-- 実績フィルター -->
+      <div class="flex flex-wrap justify-center mb-12 gap-2">
+        {filters.map((filter, index) => (
+          <button
+            class={`filter-btn ${index === 0 ? 'active px-4 py-2 text-sm tracking-wider text-white bg-indigo-700/50 border border-indigo-600/50' : 'px-4 py-2 text-sm tracking-wider text-gray-300 bg-white/5 border border-white/10'} rounded-sm hover:bg-white/10 transition-colors`}
+            data-filter={filter.id}
+          >
+            {filter.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- 実績ギャラリー -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {works.map((work) => (
+          <div class="work-item group" data-category={work.category.join(' ')}>
+            <a href={`/works/${work.id}`} class="block">
+              <div
+                class="relative overflow-hidden rounded-sm backdrop-blur-sm bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/10"
+              >
+                <!-- サムネイル -->
+                <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+                  <div
+                    class={`w-full h-full bg-gradient-to-br ${work.color} group-hover:scale-105 transition-transform duration-500`}
+                  >
+                  </div>
+                  <!-- メイン画像またはプレースホルダー -->
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    {hasValidImage(work) ? (
+                      <div class="relative w-full h-full">
+                        <img 
+                          src={work.images[0].url} 
+                          alt={work.images[0].alt || work.title} 
+                          class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                          width={600}
+                          height={450}
+                          loading="lazy"
+                          decoding="async"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+                        />
+                        <div class="absolute inset-0 items-center justify-center hidden">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-12 h-12 text-white/30"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1"
+                              d={getIconPath(work.icon)}
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-12 h-12 text-white/30"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1"
+                          d={getIconPath(work.icon)}
+                        ></path>
+                      </svg>
+                    )}
+                  </div>
+                  <!-- オーバーレイ -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50"
+                  >
+                  </div>
+                </div>
+
+                <!-- コンテンツ -->
+                <div class="p-6">
+                  <div class="flex justify-between items-start mb-3">
+                    <span
+                      class="inline-block px-2 py-1 text-xs tracking-wider text-indigo-300 bg-indigo-900/50 rounded-sm"
+                    >
+                      {work.category.includes('ec') && work.category.includes('corporate') 
+                        ? 'コーポレート・EC'
+                        : work.category.includes('ec') 
+                          ? 'ECサイト' 
+                          : work.category.includes('corporate')
+                            ? 'コーポレートサイト'
+                            : work.category.includes('lp')
+                              ? 'LP'
+                              : work.category.includes('web-app')
+                                ? 'Webアプリ'
+                                : 'その他'}
+                    </span>
+                    <span class="text-gray-400 text-xs">{work.year}年</span>
+                  </div>
+                  <h3 class="text-xl font-medium text-white mb-2">
+                    {work.title}
+                  </h3>
+                  <p class="text-gray-400 font-light text-sm mb-4">
+                    {work.description}
+                  </p>
+                  <div class="flex items-center text-indigo-400 text-sm">
+                    <span>詳細を見る</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* アスペクト比 */
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 16;
+  }
+
+  .aspect-h-12 {
+    --tw-aspect-h: 12;
+  }
+
+  .aspect-w-16 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // フィルタリング機能
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const workItems = document.querySelectorAll(".work-item");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // アクティブクラスを全て削除
+        filterBtns.forEach((b) =>
+          b.classList.remove("active", "bg-indigo-700/50", "text-white")
+        );
+        filterBtns.forEach((b) =>
+          b.classList.add("bg-white/5", "text-gray-300")
+        );
+
+        // クリックされたボタンをアクティブに
+        btn.classList.remove("bg-white/5", "text-gray-300");
+        btn.classList.add("active", "bg-indigo-700/50", "text-white");
+
+        // フィルタリング
+        const filter = btn.getAttribute("data-filter");
+
+        workItems.forEach((item) => {
+          if (filter === "all") {
+            (item as HTMLElement).style.display = "block";
+          } else {
+            const categories = item.getAttribute("data-category")?.split(" ") || [];
+            if (categories.includes(filter || "")) {
+              (item as HTMLElement).style.display = "block";
+            } else {
+              (item as HTMLElement).style.display = "none";
+            }
+          }
+        });
+      });
+    });
+  });
+</script> 

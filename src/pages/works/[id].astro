@@ -304,7 +304,13 @@ const relatedWorks = portfolioData.works
                       ? 'コーポレート・EC'
                       : relatedWork.category.includes('ec') 
                         ? 'ECサイト' 
-                        : 'コーポレートサイト'}
+                        : relatedWork.category.includes('corporate')
+                          ? 'コーポレートサイト'
+                          : relatedWork.category.includes('lp')
+                            ? 'LP'
+                            : relatedWork.category.includes('web-app')
+                              ? 'Webアプリ'
+                              : 'その他'}
                   </span>
                   <span class="text-gray-400 text-xs">{relatedWork.year}年</span>
                 </div>
