@@ -1,19 +1,18 @@
 ---
-import Services from "../components/Services.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Welcome from "../components/Welcome.astro";
+import Services from "../components/Services.astro";
 import Works from "../components/Works.astro";
 import Faq from "../components/Faq.astro";
-
-import Footer from "../components/Footer.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout>
-  <Header />
+<BaseLayout title="WebChaleur | 北海道十勝のWeb制作">
   <Welcome />
+  <Header />
   <Services />
   <Works />
-  <Faq/>
+  <Faq />
   <Footer />
 </BaseLayout>
